@@ -51,7 +51,7 @@
    ========================================================================== */
 .about-hero-section {
     position: relative;
-    padding: 160px 0 120px 0;
+    padding: 60px 0 120px 0;
     background-color: var(--clr-bg);
 }
 
@@ -201,7 +201,7 @@
    SECTION 2: THE SACRED CREED (ARTISAN MANIFESTO)
    ========================================================================== */
 .about-creed-section {
-    padding: 140px 0;
+    padding: 60px 0;
     background-color: var(--clr-white);
     border-top: 1px solid rgba(11, 8, 7, 0.03);
     border-bottom: 1px solid rgba(11, 8, 7, 0.03);
@@ -277,7 +277,7 @@
    SECTION 3: THE CHRONICLES TIMELINE
    ========================================================================== */
 .about-heritage-section {
-    padding: 160px 0;
+    padding: 60px 0;
 }
 
 .heritage-split-grid {
@@ -352,7 +352,7 @@
    SECTION 4: THE SYSTEMATIC PILLARS
    ========================================================================== */
 .about-pillars-section {
-    padding: 160px 0;
+    padding: 60px 0;
     background-color: var(--clr-white);
 }
 
