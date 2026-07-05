@@ -9,3 +9,9 @@ def about(request):
     
 def service(request):
     return render(request,"main/service.html")
+    
+def gallery(request):
+    return render(request,"main/gallery.html")
+    
+def contact(request):
+    return render(request,"main/contact.html")
