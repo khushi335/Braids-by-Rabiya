@@ -1,0 +1,2311 @@
+/* ==========================================================================
+   DESIGN VARIABLES & SYSTEM RESET
+   ========================================================================== */
+:root {
+    --clr-bg: #FAF6F0;
+    --clr-dark: #0B0807;          /* Premium Deep Rich Onyx Black */
+    --clr-topbar: #13100E;        /* Warm Editorial Rich Charcoal-Brown Accent background */
+    --clr-muted: #A49890;         /* Visible clean light text contrast */
+    --clr-gold: #C5A059;          /* Signature Luxury Accent Gold */
+    --clr-white: #FFFFFF;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --ease-lux: cubic-bezier(0.25, 1, 0.5, 1);
+    --transition: all 0.5s var(--ease-lux);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--clr-bg);
+}
+
+body {
+    background-color: var(--clr-bg);
+    color: var(--clr-dark);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   HIGH-FIDELITY COMBINED STICKY FRAME INTERFACE
+   ========================================================================== */
+.sticky-navigation-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Top Bar Config --- */
+.luxury-topbar {
+    background-color: var(--clr-topbar);
+    color: var(--clr-white);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 12px 0;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.topbar-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.85;
+}
+
+.topbar-item a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.topbar-item a:hover {
+    color: var(--clr-gold);
+}
+
+.topbar-item.highlight {
+    color: var(--clr-gold);
+    font-weight: 600;
+    opacity: 1;
+}
+
+/* --- Expanded Luxury Pitch Black Navbar Container --- */
+.luxury-header {
+    background-color: var(--clr-dark);
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 50px;
+    height: 90px; /* Enhanced height profile for a bold look */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* --- Absolute Edge-to-Edge Architectural Logo Integration --- */
+.brand-identity-flush {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.brand-logo-flush {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    padding: 2px 0; /* Prevents raw boundary aliasing clipping */
+    transition: transform 0.4s var(--ease-lux);
+}
+
+.brand-logo-flush:hover {
+    transform: scale(1.02);
+}
+
+/* --- Nav Links Framework --- */
+.navigation-menu {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    margin-left: auto; /* Pushes links array beautifully to the right */
+}
+
+.menu-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.08em;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.menu-link:hover, .menu-link.active {
+    color: var(--clr-white);
+}
+
+.menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1px;
+    background-color: var(--clr-gold);
+    transition: width 0.4s var(--ease-lux);
+}
+
+.menu-link:hover::after, .menu-link.active::after {
+    width: 100%;
+}
+
+/* High Contrast Gold Action Callout */
+.menu-cta {
+    background-color: var(--clr-gold);
+    color: var(--clr-dark);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: 1px solid var(--clr-gold);
+    transition: var(--transition);
+}
+
+.menu-cta:hover {
+    background-color: transparent;
+    color: var(--clr-gold);
+    transform: translateY(-2px);
+}
+
+/* --- Modern Functional Hamburger System --- */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 26px;
+    height: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    z-index: 2100;
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--clr-white);
+    transition: var(--transition);
+    transform-origin: center;
+}
+
+.content-wrapper {
+    flex: 1;
+}
+
+/* ==========================================================================
+   STRUCTURAL LAYOUT: PREMIUM RE-CALIBRATED FOOTER
+   ========================================================================== */
+.luxury-footer {
+    background-color: var(--clr-dark);
+    color: var(--clr-white);
+    padding: 100px 0 40px 0;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 100px;
+}
+
+.brand-block h2 {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    font-weight: 300;
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
+    color: var(--clr-white);
+}
+
+.manifesto {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #A49890;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.social-stats {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--clr-gold);
+}
+
+.social-stats .divider {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--clr-gold);
+}
+
+.links-block h3, .contact-block h3 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: var(--clr-gold);
+}
+
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+.footer-links-grid a {
+    color: var(--clr-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.footer-links-grid a:hover {
+    color: var(--clr-white);
+    transform: translateX(6px);
+}
+
+.contact-details-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-details-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: var(--clr-muted);
+}
+
+.contact-details-list a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-details-list a:hover {
+    color: var(--clr-white);
+}
+
+.social-medias {
+    display: flex;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.social-medias a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.03);
+    color: var(--clr-white);
+    font-size: 1rem;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-medias a:hover {
+    color: var(--clr-dark);
+    background-color: var(--clr-gold);
+    border-color: var(--clr-gold);
+    transform: translateY(-3px);
+}
+
+.footer-copyright {
+    max-width: 1440px;
+    margin: 80px auto 0 auto;
+    padding: 35px 50px 0 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   HIGH-FIDELITY RESPONSIVE GRAPHIC PLATFORM TRANSLATIONS
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .topbar-inner, .header-inner, .footer-inner, .footer-copyright { padding-left: 40px; padding-right: 40px; }
+    .brand-identity-flush { left: 40px; }
+    .footer-inner { gap: 60px; }
+}
+
+@media (max-width: 1024px) {
+    .footer-inner { grid-template-columns: 1fr; gap: 50px; }
+}
+
+@media (max-width: 768px) {
+    .sticky-navigation-wrapper { position: fixed; } /* Locks smooth interface scrolling layout engine profiles */
+    
+    .topbar-inner {
+        flex-direction: column;
+        gap: 6px;
+        padding: 8px 20px;
+        text-align: center;
+    }
+    
+    .header-inner {
+        height: 75px; /* Slightly tighter profile on handheld viewports */
+        padding: 0 20px;
+    }
+    
+    .brand-identity-flush { left: 20px; }
+
+    .hamburger-menu { display: flex; }
+
+    /* Modern Dark Slide Overlay UI Menu Matrix */
+    .navigation-menu {
+        position: fixed;
+        top: 129px; /* Calculated cleanly directly below rearranged mobile topbar + header height */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 129px);
+        background-color: var(--clr-dark);
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 30px 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+        transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    .navigation-menu.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .menu-link {
+        width: 100%;
+        text-align: center;
+        padding: 22px 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .menu-link::after { display: none; }
+
+    .menu-cta {
+        width: calc(100% - 80px);
+        margin: 35px 40px;
+        text-align: center;
+        padding: 16px 0;
+    }
+
+    /* Transform Hamburger Icon into a sleek Cross close button on toggle interaction */
+    .hamburger-menu.open .bar:nth-child(1) {
+        transform: translateY(4px) rotate(45deg);
+    }
+    .hamburger-menu.open .bar:nth-child(2) {
+        transform: translateY(-4px) rotate(-45deg);
+    }
+    
+    .footer-inner, .footer-copyright { padding-left: 20px; padding-right: 20px; }
+    .luxury-footer { padding: 70px 0 30px 0; }
+}
+
+
+
+/* ==========================================================================
+   2026 LUXURY INTERACTIVE HERO SECTION (UNTOUCHED STYLING CORES)
+   ========================================================================== */
+.premium-hero {
+    position: relative;
+    padding: 60px 0 140px 0;
+    background-color: var(--clr-bg);
+    overflow: hidden;
+    border-bottom: 1px solid rgba(26, 19, 16, 0.04);
+}
+
+/* Subtle ambient backdrop lighting for premium depth */
+.hero-blur-glow {
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.05) 0%, transparent 70%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-matrix-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Left Column Core Copy Typography --- */
+.hero-eyebrow-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.luxury-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--clr-gold);
+}
+
+.badge-separator {
+    width: 5px;
+    height: 5px;
+    background-color: rgba(26, 19, 16, 0.15);
+    border-radius: 50%;
+}
+
+.follower-count {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--clr-muted);
+    letter-spacing: 0.02em;
+}
+
+.hero-editorial-title {
+    font-family: var(--font-serif);
+    font-size: 4.8rem;
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--clr-dark);
+    margin-bottom: 30px;
+}
+
+.text-serif-italic {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--clr-dark);
+}
+
+.hero-editorial-paragraph {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--clr-muted);
+    max-width: 550px;
+    margin-bottom: 45px;
+}
+
+/* --- Premium Dynamic Action Controls --- */
+.hero-action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.luxury-btn-prime {
+    background-color: var(--clr-dark);
+    color: var(--clr-bg);
+    padding: 20px 40px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+    z-index: 1;
+    transition: var(--transition);
+}
+
+.luxury-btn-prime i {
+    transition: transform 0.3s var(--ease-lux);
+}
+
+.luxury-btn-prime:hover {
+    background-color: var(--clr-gold);
+    color: var(--clr-white);
+}
+
+.luxury-btn-prime:hover i {
+    transform: translateX(6px);
+}
+
+.luxury-btn-ghost {
+    padding: 20px 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    color: var(--clr-dark);
+    position: relative;
+    transition: var(--transition);
+}
+
+.luxury-btn-ghost::after {
+    content: '';
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(26, 19, 16, 0.2);
+    transition: var(--transition);
+}
+
+.luxury-btn-ghost:hover {
+    color: var(--clr-gold);
+}
+
+.luxury-btn-ghost:hover::after {
+    background-color: var(--clr-gold);
+    width: 60%;
+}
+
+/* Brand Timeline Track Base */
+.hero-timeline-signature {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sig-line {
+    width: 40px;
+    height: 1px;
+    background-color: var(--clr-gold);
+}
+
+.sig-text {
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    color: var(--clr-muted);
+}
+
+.sig-text strong {
+    color: var(--clr-dark);
+}
+
+/* --- Right Column: Asymmetric Lookbook Composition --- */
+.hero-artwork-composition {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main-portrait-wrapper {
+    width: 85%;
+    height: 620px;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 40px 80px rgba(26, 19, 16, 0.06);
+}
+
+.main-portrait-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s var(--ease-lux);
+}
+
+.portrait-overlay-tint {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(26, 19, 16, 0.02);
+    pointer-events: none;
+}
+
+/* Floating Structural Overlapping Detail Card Fragment */
+.floating-detail-card {
+    position: absolute;
+    bottom: -35px;
+    left: -10px;
+    width: 220px;
+    background-color: var(--clr-white);
+    padding: 16px;
+    z-index: 5;
+    box-shadow: 0 30px 60px rgba(26, 19, 16, 0.1);
+    transition: transform 0.6s var(--ease-lux);
+}
+
+.detail-image-box {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.detail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detail-card-label {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-kicker {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--clr-muted);
+}
+
+.label-value {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--clr-dark);
+    margin-top: 2px;
+}
+
+/* Fine structural luxury linear background frame accent */
+.geometric-backdrop-accent {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    width: 85%;
+    height: 620px;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Composition Hover Trigger Interactions */
+.hero-artwork-composition:hover .main-portrait-img {
+    transform: scale(1.04);
+}
+
+.hero-artwork-composition:hover .floating-detail-card {
+    transform: translateY(-10px);
+}
+
+/* ==========================================================================
+   HIGH-FIDELITY RESPONSIVE GRAPHIC LAYOUT OVERRIDES (MODIFIED)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .hero-matrix-container {
+        grid-template-columns: 1fr;
+        gap: 80px;
+        padding: 0 30px;
+    }
+    
+    .hero-core-content {
+        order: 2;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-editorial-paragraph {
+        max-width: 600px;
+    }
+    
+    .hero-action-buttons {
+        justify-content: center;
+    }
+    
+    .hero-timeline-signature {
+        justify-content: center;
+    }
+
+    .hero-artwork-composition {
+        order: 1;
+        width: 100%;
+        max-width: 650px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    
+    /* Keeps your exact custom container block size */
+    .main-portrait-wrapper {
+        width: 100%;
+        height: 540px;
+        background-color: var(--clr-bg); /* Prevents harsh layout breaks */
+    }
+    
+    /* FIXED: Entire image is preserved fully inside your tablet space */
+    .main-portrait-img {
+        object-fit: contain;
+    }
+    
+    .geometric-backdrop-accent {
+        width: 100%;
+        left: -20px;
+        top: -20px;
+    }
+    
+    .floating-detail-card {
+        left: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .premium-hero {
+        padding: 60px 0 80px 0;
+    }
+    
+    .hero-matrix-container {
+        padding: 0 20px;
+        gap: 50px;
+    }
+    
+    .hero-eyebrow-wrap {
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+    
+    .hero-editorial-title {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .hero-editorial-paragraph {
+        font-size: 0.98rem;
+        margin-bottom: 35px;
+    }
+    
+    .hero-action-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 16px;
+        margin-bottom: 45px;
+    }
+    
+    .luxury-btn-prime {
+        width: 100%;
+        justify-content: center;
+        padding: 18px;
+    }
+    
+    .luxury-btn-ghost {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+    }
+    
+    .luxury-btn-ghost::after {
+        display: none;
+    }
+
+    /* Keeps your exact custom mobile display block size */
+    .main-portrait-wrapper {
+        height: 400px;
+        background-color: var(--clr-bg);
+    }
+    
+    /* FIXED: Entire image is preserved fully inside your mobile space */
+    .main-portrait-img {
+        object-fit: contain;
+    }
+    
+    .floating-detail-card {
+        display: none;
+    }
+    
+    .geometric-backdrop-accent {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   HIGH-END EDITORIAL STATEMENT SHOWCASE STYLING
+   ========================================================================== */
+.luxury-statement {
+    position: relative;
+    background-color: var(--clr-white);
+    padding: 40px 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(26, 19, 16, 0.03);
+    border-bottom: 1px solid rgba(26, 19, 16, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Artistic abstract monogram background watermark */
+.statement-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-serif);
+    font-size: 32rem;
+    font-weight: 300;
+    line-height: 1;
+    color: rgba(197, 160, 89, 0.03); /* Subtle gold tint */
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.luxury-statement-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Clean structural border frame context box */
+.statement-frame-box {
+    position: relative;
+    padding: 60px 80px;
+    border: 1px solid rgba(26, 19, 16, 0.04);
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+/* Subtle corner brackets for a premium portfolio aesthetic */
+.statement-frame-box::before,
+.statement-frame-box::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--clr-gold);
+    pointer-events: none;
+}
+.statement-frame-box::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+.statement-frame-box::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+/* --- Header Accents --- */
+.statement-header-detail {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.editorial-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--clr-gold);
+}
+
+.editorial-diamond {
+    width: 6px;
+    height: 6px;
+    background-color: var(--clr-gold);
+    transform: rotate(45deg);
+}
+
+/* --- Blockquote Typography --- */
+.editorial-master-quote {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    line-height: 1.45;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--clr-dark);
+    max-width: 850px;
+    margin: 0 auto 45px auto;
+    letter-spacing: -0.01em;
+}
+
+/* Refined style focal points */
+.quote-highlight {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    position: relative;
+    color: var(--clr-dark);
+    display: inline-block;
+}
+
+.quote-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(197, 160, 89, 0.3);
+}
+
+/* --- Author Metadata Tracks --- */
+.editorial-author-signature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.signature-track {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sig-dash-left,
+.sig-dash-right {
+    width: 24px;
+    height: 1px;
+    background-color: rgba(26, 19, 16, 0.15);
+}
+
+.curated-author-name {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.05em;
+    color: var(--clr-dark);
+}
+
+.curated-author-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--clr-muted);
+}
+
+/* ==========================================================================
+   HIGH-FIDELITY RESPONSIVE GRAPHIC LAYOUT OVERRIDES
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .luxury-statement {
+        padding: 120px 0;
+    }
+    
+    .statement-frame-box {
+        padding: 50px 40px;
+    }
+    
+    .editorial-master-quote {
+        font-size: 2.4rem;
+        line-height: 1.4;
+    }
+    
+    .statement-watermark {
+        font-size: 24rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .luxury-statement {
+        padding: 90px 0;
+    }
+    
+    .luxury-statement-container {
+        padding: 0 20px;
+    }
+    
+    .statement-frame-box {
+        padding: 40px 24px;
+        border-left: none;
+        border-right: none;
+        background-color: transparent;
+        backdrop-filter: none;
+    }
+    
+    .statement-frame-box::before,
+    .statement-frame-box::after {
+        display: none; /* Keep layout perfectly clean on phone viewports */
+    }
+    
+    .editorial-master-quote {
+        font-size: 1.85rem;
+        line-height: 1.45;
+        margin-bottom: 35px;
+    }
+    
+    .statement-watermark {
+        font-size: 16rem;
+    }
+    
+    .curated-author-name {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   2026 DIGITAL FLAGSHOP: HIGH-FIDELITY STUDIO OFFERINGS INTERACTION MATRIX
+   ========================================================================== */
+.studio-offerings-canvas {
+    background-color: var(--clr-bg);
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle architectural coordinate lines running behind components */
+.studio-grid-axis {
+    position: absolute;
+    top: 0;
+    left: 35%;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(26, 19, 16, 0.04);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.studio-fluid-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.studio-editorial-layout {
+    display: grid;
+    grid-template-columns: 0.35fr 0.65fr;
+    gap: 120px;
+    align-items: start;
+}
+
+/* --- Left Column: Minimal Sticky Typography Column --- */
+.sticky-brand-wrapper {
+    position: sticky;
+    top: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.studio-serial-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    color: var(--clr-gold);
+    margin-bottom: 24px;
+}
+
+.studio-marquee-heading {
+    font-family: var(--font-serif);
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: var(--clr-dark);
+    margin-bottom: 30px;
+}
+
+.serif-italic {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.studio-brand-paragraph {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--clr-muted);
+    max-width: 320px;
+    margin-bottom: 60px;
+}
+
+.studio-trust-metric {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(26, 19, 16, 0.1);
+    width: 100%;
+}
+
+.metric-number {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--clr-dark);
+    line-height: 1;
+}
+
+.metric-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    color: var(--clr-muted);
+}
+
+/* --- Right Column: Asymmetric Fluid Row Track --- */
+.studio-interactive-track {
+    display: flex;
+    flex-direction: column;
+}
+
+.studio-offering-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 180px 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 50px 0;
+    border-bottom: 1px solid rgba(26, 19, 16, 0.06);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Elite hairline animated interaction strip background tracking */
+.row-hover-indicator {
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr-white);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    z-index: -1;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.row-num {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(26, 19, 16, 0.25);
+    transition: color 0.4s ease;
+}
+
+/* --- High-Fashion Row Image Frames --- */
+.row-media-frame {
+    width: 180px;
+    overflow: hidden;
+    opacity: 0.2;
+    transform: scale(0.9) rotate(-1deg);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.media-aspect-ratio {
+    width: 100%;
+    height: 120px;
+    position: relative;
+}
+
+.row-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.media-tint-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(26, 19, 16, 0.02);
+}
+
+/* --- Content & Typographic Headers Inside Rows --- */
+.row-text-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-header-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.offering-title {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--clr-dark);
+    letter-spacing: -0.01em;
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.offering-cta-trigger {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    color: var(--clr-gold);
+}
+
+.cta-icon-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(26, 19, 16, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--clr-dark);
+    font-size: 0.9rem;
+    transition: all 0.4s ease;
+}
+
+.row-expandable-body {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.offering-long-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--clr-muted);
+    max-width: 620px;
+    margin-top: 16px;
+}
+
+/* ==========================================================================
+   DYNAMIC INTERACTION CASCADE TRIGGER STAGINGS
+   ========================================================================== */
+.studio-offering-row:hover,
+.studio-offering-row.active {
+    padding: 60px 30px;
+    border-bottom-color: var(--clr-dark);
+}
+
+.studio-offering-row:hover .row-hover-indicator,
+.studio-offering-row.active .row-hover-indicator {
+    transform: scaleY(1);
+    box-shadow: 0 30px 60px rgba(26, 19, 16, 0.03);
+}
+
+.studio-offering-row:hover .row-num,
+.studio-offering-row.active .row-num {
+    color: var(--clr-gold);
+}
+
+.studio-offering-row:hover .row-media-frame,
+.studio-offering-row.active .row-media-frame {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.studio-offering-row:hover .offering-title,
+.studio-offering-row.active .offering-title {
+    color: var(--clr-gold);
+}
+
+.studio-offering-row:hover .offering-cta-trigger,
+.studio-offering-row.active .offering-cta-trigger {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.studio-offering-row:hover .cta-icon-circle,
+.studio-offering-row.active .cta-icon-circle {
+    background-color: var(--clr-dark);
+    border-color: var(--clr-dark);
+    color: var(--clr-bg);
+}
+
+.studio-offering-row.active .row-expandable-body {
+    height: auto;
+    opacity: 1;
+}
+
+/* ==========================================================================
+   HIGH-FIDELITY RESPONSIVE GRAPHIC LAYOUT OVERRIDES
+   ========================================================================== */
+@media (max-width: 1300px) {
+    .studio-fluid-container { padding: 0 40px; }
+    .studio-editorial-layout { gap: 60px; }
+    .studio-marquee-heading { font-size: 3.8rem; }
+    .studio-offering-row { grid-template-columns: auto 140px 1fr; gap: 30px; }
+    .row-media-frame { width: 140px; }
+    .media-aspect-ratio { height: 100px; }
+    .offering-title { font-size: 1.8rem; }
+}
+
+@media (max-width: 1024px) {
+    .studio-grid-axis { display: none; }
+    .studio-editorial-layout { grid-template-columns: 1fr; gap: 80px; }
+    .sticky-brand-wrapper { position: relative; top: 0; }
+    .studio-brand-paragraph { max-width: 100%; }
+    .studio-trust-metric { display: none; } /* Kept clean on low real-estate viewport limits */
+}
+
+@media (max-width: 768px) {
+    .studio-offerings-canvas { padding: 100px 0; }
+    .studio-fluid-container { padding: 0 24px; }
+    .studio-marquee-heading { font-size: 2.8rem; }
+    
+    .studio-offering-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 40px 0 !important;
+    }
+    
+    .row-hover-indicator { display: none; } /* Clear animation load over-processing on mobile frames */
+    .row-index-wrapper { display: none; }
+    .row-media-frame {
+        width: 100%;
+        opacity: 1;
+        transform: none !important;
+        margin-bottom: 12px;
+    }
+    .media-aspect-ratio { height: 240px; }
+    
+    .offering-title { font-size: 1.5rem; }
+    .cta-label { display: none; } /* Strip extra label weight to maintain perfect micro padding */
+    .row-expandable-body { height: auto; opacity: 1; }
+    .offering-long-desc { font-size: 0.95rem; line-height: 1.6; }
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   THE METHODOLOGY PIPELINE COMPONENT
+   ========================================================================== */
+.studio-pipeline {
+    background-color: var(--clr-bg);
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background architectural linear detail */
+.pipeline-axis-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(26, 19, 16, 0.04);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.pipeline-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 50px;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Clean Typography Header Axis --- */
+.pipeline-header {
+    max-width: 650px;
+    margin-bottom: 80px;
+}
+
+.pipeline-kicker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.kicker-dash {
+    width: 20px;
+    height: 1px;
+    background-color: var(--clr-gold);
+}
+
+.kicker-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--clr-gold);
+}
+
+.pipeline-main-title {
+    font-family: var(--font-serif);
+    font-size: 3.2rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: var(--clr-dark);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.pipeline-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--clr-muted);
+}
+
+/* --- Symmetric Pipeline Cards Structural Track --- */
+.pipeline-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.pipeline-step-card {
+    position: relative;
+    background-color: var(--clr-white);
+    border: 1px solid rgba(26, 19, 16, 0.05);
+    padding: 45px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 340px;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Premium smooth hover card backdrop animation effect */
+.step-card-bg {
+    position: absolute;
+    inset: 0;
+    background-color: #fcfbfa;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.5s ease;
+}
+
+.step-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.step-index {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: rgba(26, 19, 16, 0.2);
+    line-height: 1;
+    transition: color 0.4s ease;
+}
+
+.step-icon-box {
+    font-size: 1.3rem;
+    color: var(--clr-muted);
+    transition: color 0.4s ease, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.step-content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.step-title {
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    font-weight: 400;
+    color: var(--clr-dark);
+    margin: 0;
+    transition: color 0.4s ease;
+}
+
+.step-description {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--clr-muted);
+    margin: 0;
+}
+
+/* ==========================================================================
+   INTERACTIVE FEEDBACK RESPONSES
+   ========================================================================== */
+.pipeline-step-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(26, 19, 16, 0.04);
+}
+
+.pipeline-step-card:hover .step-card-bg {
+    opacity: 1;
+}
+
+.pipeline-step-card:hover .step-index {
+    color: var(--clr-gold);
+}
+
+.pipeline-step-card:hover .step-icon-box {
+    color: var(--clr-dark);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.pipeline-step-card:hover .step-title {
+    color: var(--clr-gold);
+}
+
+/* ==========================================================================
+   HIGH-FIDELITY RESPONSIVE GRAPHIC INTERFACES
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .pipeline-container { padding: 0 40px; }
+    .pipeline-grid { grid-template-columns: 1fr; gap: 24px; }
+    .pipeline-step-card { min-height: auto; padding: 40px; }
+    .pipeline-axis-line { display: none; }
+}
+
+@media (max-width: 768px) {
+    .studio-pipeline { padding: 80px 0; }
+    .pipeline-container { padding: 0 24px; }
+    .pipeline-main-title { font-size: 2.4rem; }
+    .pipeline-step-card { padding: 30px; }
+    .step-top-row { margin-bottom: 24px; }
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   ULTRA-CLEAN UNIFORM EXHIBIT STYLES
+   ========================================================================== */
+.premium-exhibit {
+    background-color: var(--clr-bg);
+    padding: 80px 0;
+    position: relative;
+}
+
+.exhibit-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+/* --- Clean Typography Header Alignment --- */
+.exhibit-header {
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.exhibit-kicker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.kicker-line {
+    width: 20px;
+    height: 1px;
+    background-color: var(--clr-gold);
+}
+
+.kicker-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--clr-gold);
+}
+
+.exhibit-title {
+    font-family: var(--font-serif);
+    font-size: 3.2rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: var(--clr-dark);
+    margin: 0;
+}
+
+/* --- Equal Matrix Geometric Grid Configuration --- */
+.exhibit-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+/* Individual Card Architecture */
+.exhibit-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--clr-white);
+    border: 1px solid rgba(26, 19, 16, 0.05);
+    padding: 16px;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Perfectly squared window viewport container with an elegant backdrop */
+.card-image-window {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    /* Soft, high-end neutral background behind full images */
+    background-color: #fcfbfa; 
+    border: 1px solid rgba(26, 19, 16, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fits the full image cleanly into the canvas window without cropping */
+.exhibit-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    padding: 8px; /* Safe padding room so the full photo bounds sit elegantly */
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Subtle luxury hover overlay structure */
+.card-glass-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 19, 16, 0.01);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.card-index {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--clr-dark);
+    opacity: 0.4;
+    letter-spacing: 0.1em;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- Neat External Typography Metadata Details --- */
+.card-metadata {
+    padding: 20px 2px 2px 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.metadata-heading {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--clr-dark);
+    margin: 0;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+}
+
+.metadata-sub {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+    color: var(--clr-muted);
+}
+
+/* ==========================================================================
+   ELEGANT HOVER AND LUMINANCE TRANSFORMATIONS
+   ========================================================================== */
+.exhibit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(26, 19, 16, 0.04);
+}
+
+.exhibit-card:hover .exhibit-img {
+    transform: scale(1.03);
+}
+
+.exhibit-card:hover .card-glass-overlay {
+    opacity: 1;
+}
+
+.exhibit-card:hover .card-index {
+    opacity: 1;
+    color: var(--clr-gold);
+}
+
+.exhibit-card:hover .metadata-heading {
+    color: var(--clr-gold);
+}
+
+/* ==========================================================================
+   HIGH-FIDELITY RESPONSIVE GRAPHIC LAYOUT OVERRIDES
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .exhibit-container { padding: 0 40px; }
+    .exhibit-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+
+@media (max-width: 768px) {
+    .premium-exhibit { padding: 60px 0; }
+    .exhibit-container { padding: 0 24px; }
+    .exhibit-title { font-size: 2.4rem; }
+    .exhibit-grid { gap: 20px; }
+    .exhibit-card { padding: 12px; }
+    .card-metadata { padding: 16px 2px 2px 2px; }
+    .metadata-heading { font-size: 1.15rem; }
+}
+
+@media (max-width: 500px) {
+    .exhibit-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   THE INVESTMENT & INTELLIGENCE SPLIT SYSTEM
+   ========================================================================== */
+.studio-investment {
+    background-color: var(--clr-bg);
+    padding: 60px 0;
+    border-top: 1px solid rgba(26, 19, 16, 0.04);
+}
+
+.investment-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.investment-split-architecture {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+}
+
+/* --- Shared Element Typography Branding Defaults --- */
+.investment-kicker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.kicker-line {
+    width: 20px;
+    height: 1px;
+    background-color: #fffff;
+}
+
+.kicker-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--clr-gold);
+}
+
+.investment-title {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: var(--clr-dark);
+    margin: 0 0 20px 0;
+}
+
+.investment-lead {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--clr-muted);
+    margin-bottom: 45px;
+}
+
+/* --- Left Side: Rates Display Elements Layout --- */
+.rates-menu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.rate-menu-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(26, 19, 16, 0.05);
+}
+
+.rate-main-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.rate-service-name {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--clr-dark);
+    margin: 0;
+}
+
+.rate-price-anchor {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--clr-gold);
+}
+
+.rate-service-subtext {
+    font-size: 0.9rem;
+    color: var(--clr-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Luxury Interactive CTA Button Configuration */
+.investment-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--clr-dark);
+    color: var(--clr-bg);
+    text-decoration: none;
+    padding: 18px 36px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    transition: background-color 0.4s ease, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.investment-action-btn i {
+    font-size: 0.9rem;
+    transition: transform 0.4s ease;
+}
+
+.investment-action-btn:hover {
+    background-color: var(--clr-gold);
+    transform: translateY(-2px);
+}
+
+.investment-action-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* --- Right Side: Clean Accordion Framework --- */
+.intel-accordion-track {
+    display: flex;
+    flex-direction: column;
+}
+
+.intel-accordion-block {
+    border-bottom: 1px solid rgba(26, 19, 16, 0.08);
+    padding: 24px 0;
+}
+
+.accordion-trigger-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    gap: 30px;
+}
+
+.accordion-question {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--clr-dark);
+    margin: 0;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+/* Minimal cross to dash status indicator decoration line element */
+.accordion-status-indicator {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.accordion-status-indicator::before,
+.accordion-status-indicator::after {
+    content: '';
+    position: absolute;
+    background-color: var(--clr-dark);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Horizontal segment line */
+.accordion-status-indicator::before {
+    top: 6px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+}
+
+/* Vertical segment line */
+.accordion-status-indicator::after {
+    top: 0;
+    left: 6px;
+    width: 1px;
+    height: 100%;
+}
+
+.accordion-response-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.accordion-answer-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--clr-muted);
+    padding-top: 16px;
+    margin: 0;
+}
+
+/* --- Active Class State Modifications --- */
+.intel-accordion-block.active .accordion-question {
+    color: var(--clr-gold);
+}
+
+.intel-accordion-block.active .accordion-status-indicator::after {
+    transform: rotate(90deg);
+    opacity: 0;
+}
+
+.intel-accordion-block.active .accordion-response-panel {
+    max-height: 200px; /* Room enough to unfold answers nicely */
+}
+
+/* ==========================================================================
+   HIGH-FIDELITY RESPONSIVE GRAPHIC ADAPTATION OVERRIDES
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .investment-container { padding: 0 40px; }
+    .investment-split-architecture { gap: 60px; }
+    .investment-title { font-size: 2.4rem; }
+}
+
+@media (max-width: 992px) {
+    .investment-split-architecture {
+        grid-template-columns: 1fr;
+        gap: 80px;
+    }
+    .investment-rates-panel, .investment-intel-panel {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .studio-investment { padding: 80px 0; }
+    .investment-container { padding: 0 24px; }
+    .investment-title { font-size: 2rem; }
+    .rate-service-name { font-size: 1.2rem; }
+    .rate-price-anchor { font-size: 1.15rem; }
+    .accordion-question { font-size: 1.1rem; }
+    .investment-action-btn { width: 100%; justify-content: center; }
+}
+
+
+
+
+
+
+/* --- RESERVATIONS & REFINED INPUT FORMS --- */
+.home-reservations {
+    background-color: var(--clr-topbar);
+    color: var(--clr-bg);
+    padding: 120px 0;
+}
+
+.reservations-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.text-gold { color: var(--clr-gold); }
+
+.reservation-info-panel h2 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.reservation-info-panel p {
+    color: #A49890;
+    line-height: 1.7;
+    margin-bottom: 50px;
+}
+
+.channels-column {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.channel-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(250, 246, 240, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--clr-gold);
+}
+
+.channel-row label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6E6259;
+    margin-bottom: 4px;
+}
+
+.channel-row a, .channel-row p {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--clr-bg);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.channel-row a:hover { color: var(--clr-gold); }
+
+/* Luxury Input Field Matrix Layout Design */
+.reservation-form-panel {
+    background-color: var(--clr-bg);
+    padding: 60px;
+    color: var(--clr-dark);
+}
+
+.luxury-form-matrix {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.matrix-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.matrix-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Material Floating Animation Form Styling */
+.matrix-group input, .matrix-group textarea, .matrix-group select {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(26, 19, 16, 0.15);
+    padding: 12px 0;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--clr-dark);
+    outline: none;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.matrix-group label {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    color: var(--clr-muted);
+    font-size: 0.95rem;
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+/* Floating animation hooks when inputs acquire focus state layout values */
+.matrix-group input:focus ~ label,
+.matrix-group input:not(:placeholder-shown) ~ label,
+.matrix-group textarea:focus ~ label,
+.matrix-group textarea:not(:placeholder-shown) ~ label {
+    top: -16px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--clr-dark);
+}
+
+.matrix-group input:focus, .matrix-group textarea:focus, .matrix-group select:focus {
+    border-bottom-color: var(--clr-dark);
+}
+
+/* Native Premium Select Reset Rules overrides */
+.select-wrapper {
+    position: relative;
+}
+
+.matrix-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.select-chevron {
+    position: absolute;
+    right: 5px;
+    bottom: 14px;
+    font-size: 0.8rem;
+    color: var(--clr-muted);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Animation validation handling for the custom select label */
+.matrix-group select:focus ~ .select-label,
+.matrix-group select:valid ~ .select-label {
+    top: -16px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--clr-dark);
+}
+
+.matrix-submit-btn {
+    background-color: var(--clr-dark);
+    color: var(--clr-bg);
+    border: 1px solid var(--clr-dark);
+    padding: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 15px;
+}
+
+.matrix-submit-btn:hover {
+    background-color: transparent;
+    color: var(--clr-dark);
+}
+
+/* ==========================================================================
+   INDEX-EXCLUSIVE RESPONSIVE GRAPHIC LAYOUT MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .hero-wrapper, .reservations-inner {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    .hero-right {
+        order: -1; /* Raise content photo focus above copy fields on devices */
+    }
+    .hero-image { height: 480px; }
+    .lookbook-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .format-portrait, .format-square { height: 400px; }
+    .hero-badge-floating { left: 20px; }
+}
+
+@media (max-width: 768px) {
+    .home-hero, .home-statement, .home-services, .home-lookbook, .home-reservations {
+        padding: 70px 0;
+    }
+    .hero-wrapper, .services-container, .lookbook-gallery-grid, .reservations-inner, .container-heading {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .hero-heading { font-size: 2.8rem; }
+    .editorial-blockquote { font-size: 1.9rem; }
+    .container-heading h2 { font-size: 2.4rem; }
+    .service-strip {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+    .service-strip-img {
+        margin: 0 auto;
+    }
+    .strip-cta-arrow { display: none; } /* Extraneous item deleted for high speed tracking on mobile displays */
+    .lookbook-gallery-grid { grid-template-columns: 1fr; }
+    .reservation-info-panel h2 { font-size: 2.4rem; }
+    .reservation-form-panel { padding: 40px 24px; }
+    .matrix-row { grid-template-columns: 1fr; gap: 35px; }
+}

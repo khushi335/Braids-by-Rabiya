@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Braids by Rabya | Modern Hair Braiding Laurel, MD{% endblock %}</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    <div class="sticky-navigation-wrapper">
+        <div class="luxury-topbar">
+            <div class="topbar-inner">
+                <span class="topbar-item"><i class="fa-solid fa-location-dot"></i> Laurel, Maryland</span>
+                <span class="topbar-item highlight"><i class="fa-solid fa-sparkles"></i> Est. 2018 | Crafted With Pride</span>
+                <span class="topbar-item"><i class="fa-solid fa-phone"></i> <a href="tel:9293313351">929-331-3351</a></span>
+            </div>
+        </div>
+
+        <header class="luxury-header">
+            <div class="header-inner">
+                <a href="/" class="brand-identity-flush">
+                    <img src="{% static 'images/logo_braid.png' %}" alt="Braids by Rabya Logo" class="brand-logo-flush">
+                </a>
+                
+                <nav class="navigation-menu" id="navMenu">
+                    <a href="/" class="menu-link active">Home</a>
+                    <a href="#about" class="menu-link">About</a>
+                    <a href="#services" class="menu-link">Service</a>
+                    <a href="#gallery" class="menu-link">Gallery</a>
+                    <a href="#contact" class="menu-cta">Book Appointment</a>
+                </nav>
+
+                <button class="hamburger-menu" id="menuToggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </header>
+    </div>
+
+    <main class="content-wrapper">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="luxury-footer">
+        <div class="footer-inner">
+            <div class="footer-block brand-block">
+                <h2>Braids by Rabya</h2>
+                <p class="manifesto">“I love myself, and I love what I’m doing — braiding. It makes me happy, and I’m proud of my talent.”</p>
+                <div class="social-stats">
+                    <span><strong>839</strong> Followers</span>
+                    <span class="divider"></span>
+                    <span><strong>3.4K</strong> Following</span>
+                </div>
+            </div>
+            
+            <div class="footer-block links-block">
+                <h3>Navigation</h3>
+                <div class="footer-links-grid">
+                    <a href="#about">Philosophy</a>
+                    <a href="#services">The Menu</a>
+                    <a href="#gallery">Lookbook</a>
+                    <a href="#contact">Reservations</a>
+                </div>
+            </div>
+
+            <div class="footer-block contact-block">
+                <h3>The Studio</h3>
+                <ul class="contact-details-list">
+                    <li><i class="fa-solid fa-phone"></i> <a href="tel:9293313351">929-331-3351</a></li>
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@braidsbyrabya.com">info@braidsbyrabya.com</a></li>
+                    <li><i class="fa-solid fa-map-location"></i> Laurel, Maryland</li>
+                </ul>
+                <div class="social-medias">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 Braids by Rabya. Designed elegantly for all screen profiles.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+        
+        // Close menu when clicking link items on mobile devices
+        document.querySelectorAll('.menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
