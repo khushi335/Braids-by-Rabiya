@@ -1,0 +1,381 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}The Service Portfolio | Curated Braid Sculptures{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/service.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="services-editorial-engine">
+
+    <!-- SECTION 1: SERVICES HERO & INTRO -->
+    <section class="services-hero-section">
+        <div class="luxury-ambient-glow"></div>
+        <div class="service-wrapper">
+            <div class="services-hero-grid">
+                <div class="services-hero-lead">
+                    <div class="eyebrow-luxury-wrap">
+                        <span class="luxury-badge">The Signature Collection</span>
+                        <div class="badge-separator-line"></div>
+                    </div>
+                    <h1 class="services-masterpiece-title">
+                        Architectural Parting. <br><span class="text-accent-italic">Flawless Longevity</span>.
+                    </h1>
+                    <p class="services-editorial-lead">
+                        Every installation is a custom geometric blueprint mapped precisely to your hair density, protecting the scalp matrix while projecting a sharp, refined aesthetic.
+                    </p>
+                </div>
+                <div class="services-hero-accent-box">
+                    <div class="accent-quote-border"></div>
+                    <p class="accent-box-text">
+                        "We don't merely install styling selections; we construct lightweight, protective structural frames that balance optimal scale profiles with impeccable scalp health."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: THE CURATED SERVICE SHOWCASE GRID -->
+    <section class="services-menu-section">
+        <div class="service-wrapper">
+            <div class="menu-section-header">
+                <span class="section-pre-title">The Master Catalog</span>
+                <h2 class="section-master-heading">Our Protective Disciplines</h2>
+            </div>
+
+            <div class="services-editorial-grid">
+                
+                <!-- SERVICE CARD 1: KNOTLESS BOX BRAIDS -->
+                <div class="service-premium-card">
+                    <div class="card-image-frame">
+                        <img src="{% static 'images/braid4.jpg' %}" alt="Knotless Box Braids Masterpiece" class="service-render-img">
+                        <div class="card-image-overlay"></div>
+                        <span class="card-floating-category">Signature Style</span>
+                    </div>
+                    <div class="card-editorial-body">
+                        <div class="card-meta-row">
+                            <span class="service-index">01 // STRUCTURAL</span>
+                            <span class="service-duration"><i class="fa-regular fa-clock"></i> 4–6 hrs</span>
+                        </div>
+                        <h3 class="service-card-title">Knotless Box Braids</h3>
+                        <p class="service-card-copy">
+                            A seamless, weightless installation starting directly from your natural root matrix. Eliminates tension vectors entirely while maximizing high-impact styling versatility.
+                        </p>
+                        <div class="card-action-footer">
+                            <div class="service-price-tier">
+                                <span class="price-label">Investment From</span>
+                                <span class="price-amount">$180</span>
+                            </div>
+                            <a href="#booking" class="service-discover-link">
+                                <span>Reserve Slot</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SERVICE CARD 2: FULANI BRAIDS -->
+                <div class="service-premium-card">
+                    <div class="card-image-frame">
+                        <img src="{% static 'images/braid5.jpg' %}" alt="Fulani Braids Custom Geometry" class="service-render-img">
+                        <div class="card-image-overlay"></div>
+                        <span class="card-floating-category">Heritage Art</span>
+                    </div>
+                    <div class="card-editorial-body">
+                        <div class="card-meta-row">
+                            <span class="service-index">02 // LINEAR CREATION</span>
+                            <span class="service-duration"><i class="fa-regular fa-clock"></i> 3–5 hrs</span>
+                        </div>
+                        <h3 class="service-card-title">Fulani Tribal Fusion</h3>
+                        <p class="service-card-copy">
+                            Combining ultra-precise, forward-sweeping linear cornrows with structural crown extensions. An editorial tribute to classic patterns balanced with sharp modern geometry.
+                        </p>
+                        <div class="card-action-footer">
+                            <div class="service-price-tier">
+                                <span class="price-label">Investment From</span>
+                                <span class="price-amount">$220</span>
+                            </div>
+                            <a href="#booking" class="service-discover-link">
+                                <span>Reserve Slot</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SERVICE CARD 3: CORNROWS & FEED-INS -->
+                <div class="service-premium-card">
+                    <div class="card-image-frame">
+                        <img src="{% static 'images/braid6.jpg' %}" alt="Feed-In Cornrows Profile" class="service-render-img">
+                        <div class="card-image-overlay"></div>
+                        <span class="card-floating-category">Minimalist Clean</span>
+                    </div>
+                    <div class="card-editorial-body">
+                        <div class="card-meta-row">
+                            <span class="service-index">03 // SYMMETRY MAPPING</span>
+                            <span class="service-duration"><i class="fa-regular fa-clock"></i> 2–4 hrs</span>
+                        </div>
+                        <h3 class="service-card-title">Precision Feed-In Cornrows</h3>
+                        <p class="service-card-copy">
+                            Gradual fiber introduction built to produce a completely flat, razor-sharp profile along the natural scalp lines. Perfect for clean, uncompromised everyday luxury.
+                        </p>
+                        <div class="card-action-footer">
+                            <div class="service-price-tier">
+                                <span class="price-label">Investment From</span>
+                                <span class="price-amount">$140</span>
+                            </div>
+                            <a href="#booking" class="service-discover-link">
+                                <span>Reserve Slot</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SERVICE CARD 4: GODDESS KNOTLESS -->
+                <div class="service-premium-card">
+                    <div class="card-image-frame">
+                        <img src="{% static 'images/braid1.jpg' %}" alt="Goddess Knotless Braids" class="service-render-img">
+                        <div class="card-image-overlay"></div>
+                        <span class="card-floating-category">Ethereal Form</span>
+                    </div>
+                    <div class="card-editorial-body">
+                        <div class="card-meta-row">
+                            <span class="service-index">04 // FLUID MATRIX</span>
+                            <span class="service-duration"><i class="fa-regular fa-clock"></i> 4.5–7 hrs</span>
+                        </div>
+                        <h3 class="service-card-title">Goddess Knotless Sculptures</h3>
+                        <p class="service-card-copy">
+                            Classic knotless architecture intertwined with raw, premium cascading curls. Meticulously balanced to provide high-volume movement without adding weight to the root system.
+                        </p>
+                        <div class="card-action-footer">
+                            <div class="service-price-tier">
+                                <span class="price-label">Investment From</span>
+                                <span class="price-amount">$240</span>
+                            </div>
+                            <a href="#booking" class="service-discover-link">
+                                <span>Reserve Slot</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SERVICE CARD 5: BOHEMIAN PASSION TWISTS -->
+                <div class="service-premium-card">
+                    <div class="card-image-frame">
+                        <img src="{% static 'images/braid2.jpg' %}" alt="Bohemian Passion Twists" class="service-render-img">
+                        <div class="card-image-overlay"></div>
+                        <span class="card-floating-category">Organic Texture</span>
+                    </div>
+                    <div class="card-editorial-body">
+                        <div class="card-meta-row">
+                            <span class="service-index">05 // DUAL STRAND</span>
+                            <span class="service-duration"><i class="fa-regular fa-clock"></i> 3.5–5.5 hrs</span>
+                        </div>
+                        <h3 class="service-card-title">Bohemian Passion Twists</h3>
+                        <p class="service-card-copy">
+                            An organic, multi-tonal twist execution engineered with soft, interlocked fiber profiles. Designed specifically to mimic natural curl clusters while offering absolute element defense.
+                        </p>
+                        <div class="card-action-footer">
+                            <div class="service-price-tier">
+                                <span class="price-label">Investment From</span>
+                                <span class="price-amount">$200</span>
+                            </div>
+                            <a href="#booking" class="service-discover-link">
+                                <span>Reserve Slot</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SERVICE CARD 6: MICRO-BRAID TEXTURE GRID -->
+                <div class="service-premium-card">
+                    <div class="card-image-frame">
+                        <img src="{% static 'images/braid3.jpg' %}" alt="Micro-Braid Texture Grid" class="service-render-img">
+                        <div class="card-image-overlay"></div>
+                        <span class="card-floating-category">Ultra High-Density</span>
+                    </div>
+                    <div class="card-editorial-body">
+                        <div class="card-meta-row">
+                            <span class="service-index">06 // PRECISION MICRO</span>
+                            <span class="service-duration"><i class="fa-regular fa-clock"></i> 6–9 hrs</span>
+                        </div>
+                        <h3 class="service-card-title">Micro-Braid Texture Grid</h3>
+                        <p class="service-card-copy">
+                            The pinnacle of custom braid craft. Hundreds of micro-scaled filaments map across a hyper-segmented parting array, providing the movement and texture flexibility of free-flowing hair.
+                        </p>
+                        <div class="card-action-footer">
+                            <div class="service-price-tier">
+                                <span class="price-label">Investment From</span>
+                                <span class="price-amount">$350</span>
+                            </div>
+                            <a href="#booking" class="service-discover-link">
+                                <span>Reserve Slot</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SERVICE CARD 7: BUTTERFLY LOC SCULPTING -->
+                <div class="service-premium-card">
+                    <div class="card-image-frame">
+                        <img src="{% static 'images/braid7.jpg' %}" alt="Butterfly Loc Sculpting" class="service-render-img">
+                        <div class="card-image-overlay"></div>
+                        <span class="card-floating-category">Dimensional Form</span>
+                    </div>
+                    <div class="card-editorial-body">
+                        <div class="card-meta-row">
+                            <span class="service-index">07 // DISTRESSED ART</span>
+                            <span class="service-duration"><i class="fa-regular fa-clock"></i> 4.5–6 hrs</span>
+                        </div>
+                        <h3 class="service-card-title">Butterfly Loc Sculpting</h3>
+                        <p class="service-card-copy">
+                            A highly textured, custom-wrapped faux loc installation utilizing signature loop techniques to form distressed, butterfly-wing contours along the length of each protective column.
+                        </p>
+                        <div class="card-action-footer">
+                            <div class="service-price-tier">
+                                <span class="price-label">Investment From</span>
+                                <span class="price-amount">$260</span>
+                            </div>
+                            <a href="#booking" class="service-discover-link">
+                                <span>Reserve Slot</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SERVICE CARD 8: FRENCH CURL EDITORIAL -->
+                <div class="service-premium-card">
+                    <div class="card-image-frame">
+                        <img src="{% static 'images/braid8.jpg' %}" alt="French Curl Braids" class="service-render-img">
+                        <div class="card-image-overlay"></div>
+                        <span class="card-floating-category">Editorial Flow</span>
+                    </div>
+                    <div class="card-editorial-body">
+                        <div class="card-meta-row">
+                            <span class="service-index">08 // HYBRID LENGTHS</span>
+                            <span class="service-duration"><i class="fa-regular fa-clock"></i> 4–6 hrs</span>
+                        </div>
+                        <h3 class="service-card-title">French Curl Braids</h3>
+                        <p class="service-card-copy">
+                            Flawless box sections that cascade down into dramatic, high-luster premium French curls. Engineered to eliminate tangling vectors while maintaining a bouncing, luxurious weight profile.
+                        </p>
+                        <div class="card-action-footer">
+                            <div class="service-price-tier">
+                                <span class="price-label">Investment From</span>
+                                <span class="price-amount">$210</span>
+                            </div>
+                            <a href="#booking" class="service-discover-link">
+                                <span>Reserve Slot</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SERVICE CARD 9: STITCH BRAID CANVAS -->
+                <div class="service-premium-card">
+                    <div class="card-image-frame">
+                        <img src="{% static 'images/braid9.jpg' %}" alt="Stitch Braid Canvas" class="service-render-img">
+                        <div class="card-image-overlay"></div>
+                        <span class="card-floating-category">High-Definition Lines</span>
+                    </div>
+                    <div class="card-editorial-body">
+                        <div class="card-meta-row">
+                            <span class="service-index">09 // PARALLEL TRACES</span>
+                            <span class="service-duration"><i class="fa-regular fa-clock"></i> 2.5–4.5 hrs</span>
+                        </div>
+                        <h3 class="service-card-title">Tailored Stitch Braid Canvas</h3>
+                        <p class="service-card-copy">
+                            Sharp parallel hair tracks formed using a precision pinky-parting alignment process. Creates deep, mathematical channels and clean feeding lines for an undeniably sharp, striking outcome.
+                        </p>
+                        <div class="card-action-footer">
+                            <div class="service-price-tier">
+                                <span class="price-label">Investment From</span>
+                                <span class="price-amount">$160</span>
+                            </div>
+                            <a href="#booking" class="service-discover-link">
+                                <span>Reserve Slot</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: THE ANATOMY OF CRAFT (PROCESS PIPELINE) -->
+    <section class="service-pipeline-section">
+        <div class="service-wrapper">
+            <div class="pipeline-split-container">
+                <div class="pipeline-sticky-aside">
+                    <span class="section-pre-title">The Rigorous Pipeline</span>
+                    <h2 class="section-master-heading">The Scalp Engineering Protocol.</h2>
+                    <p class="section-narrative-paragraph">
+                        We maintain zero-compromise execution metrics across every service block to assure proper moisture balance and layout perfection before you step out of our doors.
+                    </p>
+                </div>
+                <div class="pipeline-steps-track">
+                    
+                    <div class="pipeline-step-node">
+                        <div class="step-numerical-marker">01</div>
+                        <div class="step-content-block">
+                            <h4 class="step-node-title">Density Optimization Analysis</h4>
+                            <p class="step-node-copy">We closely evaluate individual hair elasticity vectors and scalp health levels to calibrate accurate tension parameters before selecting styling material volume grids.</p>
+                        </div>
+                    </div>
+
+                    <div class="pipeline-step-node">
+                        <div class="step-numerical-marker">02</div>
+                        <div class="step-content-block">
+                            <h4 class="step-node-title">Botanical Canvas Preparation</h4>
+                            <p class="step-node-copy">A thorough clarifying rinse followed by intense deep hydration therapy cycles, ensuring clean, debris-free part tracking lines and natural luster retention.</p>
+                        </div>
+                    </div>
+
+                    <div class="pipeline-step-node">
+                        <div class="step-numerical-marker">03</div>
+                        <div class="step-content-block">
+                            <h4 class="step-node-title">Surgical Geometric Execution</h4>
+                            <p class="step-node-copy">Utilizing micro-tracking design matrices to partition flawless hair lines, guaranteeing even distribution paths across the entire crown profile.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: INVITATION PANEL -->
+    <section class="services-gateway-activation">
+        <div class="gateway-fine-backdrop-line"></div>
+        <div class="service-wrapper">
+            <div class="gateway-content-center">
+                <span class="gateway-pre-title">Secure Your Private Curation Session</span>
+                <h2 class="gateway-master-heading">Ready to Experience True Structural Crown Crafting?</h2>
+                <p class="gateway-narrative-paragraph">
+                    Slots are rigorously block-allocated to ensure uncompromised precision, individual attention focus parameters, and an exclusive, luxury suite experience.
+                </p>
+                <div class="gateway-action-row">
+                    <a href="#booking" class="prime-luxury-action-btn">
+                        <span>Initiate Booking Request</span>
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </a>
+                    <a href="https://www.facebook.com/Braidsbyrabiya/" target="_blank" rel="noopener noreferrer" class="secondary-luxury-ghost-btn">
+                        <span>Review Living Gallery Archive</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+{% endblock %}
