@@ -1,0 +1,187 @@
+/* ==========================================================================
+   2026 LUXURY VISUAL GALLERY ENGINE (gallery.css)
+   ========================================================================== */
+
+.gallery-editorial-engine {
+    font-family: var(--font-sans), sans-serif;
+    background-color: var(--clr-bg);
+    color: var(--clr-dark);
+    overflow-x: hidden;
+    letter-spacing: -0.01em;
+}
+
+.gallery-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+    position: relative;
+    z-index: 5;
+}
+
+/* Typography Foundations */
+.gallery-hero-section {
+    position: relative;
+    padding: 80px 0 50px 0;
+    background-color: var(--clr-bg);
+    text-align: center;
+}
+
+.gallery-masterpiece-title {
+    font-size: clamp(2.6rem, 5vw, 4.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--clr-dark);
+    margin-bottom: 24px;
+}
+
+.gallery-editorial-lead {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #5c5550;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+/* ==========================================================================
+   HIGH-END MASONRY GRID SYSTEM (24 Card Array)
+   ========================================================================== */
+.gallery-showcase-section {
+    padding: 20px 0 100px 0;
+    background-color: var(--clr-white);
+}
+
+/* Modern CSS Grid Columns that handle dynamic item scaling beautifully */
+.gallery-masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.gallery-artwork-card {
+    background-color: var(--clr-bg);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.6s var(--ease-lux), box-shadow 0.6s var(--ease-lux);
+    border: 1px solid rgba(11, 8, 7, 0.03);
+}
+
+/* Varying heights to generate an editorial look on desktop screens */
+.gallery-artwork-card.height-tall .card-media-frame {
+    aspect-ratio: 3 / 4.2;
+}
+
+.gallery-artwork-card.height-standard .card-media-frame {
+    aspect-ratio: 1 / 1;
+}
+
+.card-media-frame {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #0b0807;
+}
+
+.gallery-render-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s var(--ease-lux);
+}
+
+/* Premium Reveal Overlay Interaction */
+.card-hover-metadata {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(11, 8, 7, 0) 30%, rgba(11, 8, 7, 0.85) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s var(--ease-lux), transform 0.5s var(--ease-lux);
+    pointer-events: none;
+}
+
+.artwork-category {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--clr-gold);
+    margin-bottom: 8px;
+}
+
+.artwork-title {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--clr-white);
+    letter-spacing: -0.01em;
+}
+
+/* Micro-Interaction Triggers */
+.gallery-artwork-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 50px rgba(11, 8, 7, 0.08);
+}
+
+.gallery-artwork-card:hover .gallery-render-img {
+    transform: scale(1.05);
+}
+
+.gallery-artwork-card:hover .card-hover-metadata {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   RESPONSIVE RENDERING BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+    .gallery-wrapper {
+        padding: 0 40px;
+    }
+    
+    .gallery-masonry-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .gallery-masonry-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-wrapper {
+        padding: 0 20px;
+    }
+
+    .gallery-hero-section {
+        padding: 60px 0 30px 0;
+    }
+
+    .gallery-masonry-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    /* Standardize aspect ratio on mobile screens to ensure ease of navigation */
+    .gallery-artwork-card.height-tall .card-media-frame,
+    .gallery-artwork-card.height-standard .card-media-frame {
+        aspect-ratio: 4 / 5;
+    }
+
+    .card-hover-metadata {
+        opacity: 1;
+        transform: translateY(0);
+        padding: 20px;
+        background: linear-gradient(to bottom, rgba(11, 8, 7, 0) 50%, rgba(11, 8, 7, 0.75) 100%);
+    }
+}
