@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Braids by Rabya | Modern Hair Braiding Laurel, MD{% endblock %}</title>
+    <title>{% block title %}Braids by Rabiya | Modern Hair Braiding Laurel, MD{% endblock %}</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +16,25 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body>
+
+    <aside class="sticky-social-sidebar">
+        <a href="https://wa.me/9293313351" target="_blank" rel="noopener noreferrer" class="sidebar-icon whatsapp" aria-label="WhatsApp Chat">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="sidebar-tooltip">WhatsApp</span>
+        </a>
+        <a href="https://www.facebook.com/Braidsbyrabiya/" target="_blank" rel="noopener noreferrer" class="sidebar-icon facebook" aria-label="Facebook Profile">
+            <i class="fa-brands fa-facebook-f"></i>
+            <span class="sidebar-tooltip">Facebook</span>
+        </a>
+        <a href="https://www.tiktok.com/@braidsbyrabiya" target="_blank" rel="noopener noreferrer" class="sidebar-icon tiktok" aria-label="TikTok Feed">
+            <i class="fa-brands fa-tiktok"></i>
+            <span class="sidebar-tooltip">TikTok</span>
+        </a>
+        <a href="https://www.instagram.com/braidbyrabiya/" target="_blank" rel="noopener noreferrer" class="sidebar-icon instagram" aria-label="Instagram Profile">
+            <i class="fa-brands fa-instagram"></i>
+            <span class="sidebar-tooltip">Instagram</span>
+        </a>
+    </aside>
 
     <div class="sticky-navigation-wrapper">
         <div class="luxury-topbar">
@@ -55,10 +74,11 @@
     <footer class="luxury-footer">
         <div class="footer-inner">
             <div class="footer-block brand-block">
-                <h2>Braids by Rabya</h2>
+                <h2>Braids by Rabiya</h2>
                 <p class="manifesto">“I love myself, and I love what I’m doing — braiding. It makes me happy, and I’m proud of my talent.”</p>
                 <div class="social-stats">
                     <span><strong>839</strong> Followers</span>
+                    <span class="divider"></span>
                     <span class="divider"></span>
                     <span><strong>3.4K</strong> Following</span>
                 </div>
@@ -78,18 +98,18 @@
                 <h3>The Studio</h3>
                 <ul class="contact-details-list">
                     <li><i class="fa-solid fa-phone"></i> <a href="tel:9293313351">929-331-3351</a></li>
-                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@braidsbyrabya.com">info@braidsbyrabya.com</a></li>
-                    <li><i class="fa-solid fa-map-location"></i> Laurel, Maryland</li>
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@braidsbyrabiya.com">info@braidsbyrabiya.com</a></li>
+                    <li><i class="fa-solid fa-map-location"></i> 9160 Bourbon St, Laurel, MD 20723</li>
                 </ul>
                 <div class="social-medias">
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://www.facebook.com/Braidsbyrabiya/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/braidbyrabiya/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@braidsbyrabiya" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/Braidsbyrabiya/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
-            <p>&copy; 2026 Braids by Rabya. Designed elegantly for all screen profiles.</p>
+            <p>&copy; 2026 Braids by Rabiya. Designed by <a href="http://quantumcoresoftware.com/" style="color: #ffffff !important; text-decoration: none;"> Quantum Core Software</a>.</p>
         </div>
     </footer>
 
@@ -104,7 +124,6 @@
             navMenu.classList.toggle('open');
         });
         
-        // Close menu when clicking link items on mobile devices
         document.querySelectorAll('.menu-link').forEach(link => {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('open');
@@ -112,6 +131,23 @@
             });
         });
     </script>
-    {% block extra_js %}{% endblock %}
+
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    Tawk_API.customStyle = {
+        visibility : {
+            desktop : { position : 'br', xOffset : 30, yOffset : 30 },
+            mobile : { position : 'br', xOffset : 20, yOffset : 20 }
+        }
+    };
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6a4a83004226c81d46d9aae6/1jspgvf89';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
 </body>
 </html>
