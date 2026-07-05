@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Our Heritage & Artistry | Braids by Rabya{% endblock %}
+{% block title %}Our Heritage & Artistry | Braids by Rabiya{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/about.css' %}">
@@ -57,7 +57,7 @@
                     </blockquote>
                     <div class="creed-author-signature">
                         <div class="sig-gold-line"></div>
-                        <cite class="artisan-name">Rabya — Master Protective Artisan</cite>
+                        <cite class="artisan-name">Rabiya — Master Protective Artisan</cite>
                     </div>
                 </div>
             </div>
@@ -184,7 +184,7 @@
                         <i class="fa-brands fa-facebook-f"></i>
                         <span>Explore Facebook Portfolio</span>
                     </a>
-                    <a href="#contact" class="secondary-luxury-ghost-btn">
+                    <a href="{% url 'contact' %}" class="secondary-luxury-ghost-btn">
                         <span>Request Private Consultation Session</span>
                     </a>
                 </div>
