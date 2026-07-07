@@ -247,6 +247,42 @@
     </div>
 </section>
 
+<section class="premium-video-showcase">
+    <div class="showcase-container">
+        
+        <div class="showcase-content-block">
+            <div class="showcase-badge">
+                <span class="badge-dot"></span>
+                <span class="badge-text">Signature Artistry</span>
+            </div>
+            <h2 class="showcase-heading">Experience Flawless Definition & Craftsmanship</h2>
+            <p class="showcase-description">
+                Watch our signature technique come to life. From crisp, protective partings to lightweight, voluminous finishes, we design high-end styles tailored perfectly to your lifestyle.
+            </p>
+            <div class="showcase-action-row">
+                <a href="{% url 'contact' %}" class="showcase-primary-btn">Book Your Session</a>
+            </div>
+        </div>
+
+        <div class="showcase-video-frame">
+            <div class="video-container-inner">
+                <video 
+                    class="embedded-salon-video" 
+                    autoplay 
+                    muted 
+                    loop 
+                    controls
+                    playsinline
+                    preload="auto">
+                    <source src="{% static 'images/braids.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                </div>
+        </div>
+
+    </div>
+</section>
+
 <!-- ==========================================================================
    CRAFTSMANSHIP EXPERIENCE SECTION (PREMIUM WHITE WITH HIGHLIGHT CARDS)
    ========================================================================== -->
