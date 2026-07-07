@@ -5,69 +5,65 @@
 <!-- ==========================================
      HIGH-END LUXURY HERO COMPONENT
      ========================================== -->
-<section class="premium-hero">
-    <div class="hero-blur-glow"></div>
-    <div class="hero-matrix-container">
+<section class="premium-luxury-hero">
+    <div class="hero-ambient-glow"></div>
+    <div class="hero-layout-matrix">
         
-        <!-- Left Structural Column: Content Copy & Brand Actions -->
-        <div class="hero-core-content">
-            <div class="hero-eyebrow-wrap">
-                <span class="luxury-badge"><i class="fa-solid fa-sparkles"></i> Master Protective Artistry</span>
-                <span class="badge-separator"></span>
+        <div class="hero-text-engine">
+            <div class="hero-eyebrow-container">
+                <span class="editorial-badge">
+                    <i class="fa-solid fa-sparkles"></i> Master Protective Artistry
+                </span>
+                <span class="badge-dot-divider"></span>
+                <span class="location-tracker">13600 Baltimore Ave, Maryland</span>
             </div>
             
-            <h1 class="hero-editorial-title">
+            <h1 class="hero-display-title">
                 Elevating Hair Texture <br>
-                Into <span class="text-serif-italic">Curated Art Forms.</span>
+                Into <span class="serif-italic-accent">Curated Art Forms.</span>
             </h1>
             
-            <p class="hero-editorial-paragraph">
+            <p class="hero-display-paragraph">
                 We practice uniform precision tension, impeccable geometric parting patterns, and luxurious crown extensions configured exclusively to elevate your signature personal profile.
             </p>
             
-            <div class="hero-action-buttons">
-                <a href="{% url 'contact' %}" class="luxury-btn-prime">
-                    <span>Book Studio Session</span>
-                    <i class="fa-solid fa-arrow-right-long"></i>
+            <div class="hero-interactive-actions">
+                <a href="{% url 'contact' %}" class="btn-luxury-solid">
+                    <span class="btn-text">Book Studio Session</span>
+                    <span class="btn-icon-box"><i class="fa-solid fa-arrow-right-long"></i></span>
                 </a>
-                <a href="{% url 'service' %}" class="luxury-btn-ghost">
-                    <span>View Private Menu</span>
+                <a href="{% url 'service' %}" class="btn-luxury-underline">
+                    <span class="btn-text">View Private Menu</span>
                 </a>
             </div>
             
-            <!-- Trust Metric Timeline Badge -->
-            <div class="hero-timeline-signature">
-                <div class="sig-line"></div>
-                <p class="sig-text">Flawless Protective Crowns in Laurel, MD Since <strong>2018</strong></p>
+            <div class="hero-trust-footprint">
+                <div class="trust-accent-line"></div>
+                <p class="trust-text">Flawless Protective Crowns Since <strong>2018</strong></p>
             </div>
         </div>
         
-        <!-- Right Structural Column: Layered Multi-Image Lookbook Frame -->
-        <div class="hero-artwork-composition">
-            <div class="main-portrait-wrapper">
-                <!-- Primary Wide Studio Shot Image -->
-                <img src="{% static 'images/hero-display.jpg' %}" alt="Rabiya Hair Braiding Masterpiece Portfolio" class="main-portrait-img">
-                <div class="portrait-overlay-tint"></div>
+        <div class="hero-lookbook-canvas">
+            <div class="lookbook-geometry-frame"></div>
+            
+            <div class="lookbook-main-frame">
+                <img src="{% static 'images/braids2.jpeg' %}" alt="Rabiya Hair Braiding Masterpiece Portfolio" class="lookbook-img-core">
+                <div class="lookbook-shade-tint"></div>
             </div>
             
-            <!-- Overlapping Precision Detail Detail Cut Image -->
-            <div class="floating-detail-card">
-                <div class="detail-image-box">
-                    <img src="{% static 'images/gallery-2.jpg' %}" alt="Pristine Braiding Parting Close-up" class="detail-img">
+            <div class="lookbook-detail-fragment">
+                <div class="fragment-media-box">
+                    <img src="{% static 'images/braidd.jpg' %}" alt="Pristine Braiding Parting Close-up" class="fragment-img">
                 </div>
-                <div class="detail-card-label">
-                    <span class="label-kicker">Precision Parting</span>
-                    <span class="label-value">Tension Control</span>
+                <div class="fragment-meta-data">
+                    <span class="fragment-kicker">Precision Parting</span>
+                    <span class="fragment-title">Tension Control</span>
                 </div>
             </div>
-            
-            <!-- Abstract Frame Decorative Accent -->
-            <div class="geometric-backdrop-accent"></div>
         </div>
 
     </div>
 </section>
-
 
 <!-- ==========================================
      HIGH-END EDITORIAL STATEMENT SHOWCASE
@@ -105,170 +101,204 @@
 </section>
 
 <!-- ==========================================================================
-     ULTRA-LUXURY ARCHITECTURAL OFFERINGS MATRIX
-     ========================================================================== -->
-<section class="studio-offerings-canvas" id="services">
-    <!-- Subtle architectural background accent lines -->
-    <div class="studio-grid-axis"></div>
-    
-    <div class="studio-fluid-container">
-        <div class="studio-editorial-layout">
-            
-            <!-- Left Fixed Column: Typographic Branding Anchor -->
-            <div class="studio-brand-anchor">
-                <div class="sticky-brand-wrapper">
-                    <span class="studio-serial-tag">SERIES 01 // CATEGORIES</span>
-                    <h2 class="studio-marquee-heading">Signature<br><span class="serif-italic">Menu.</span></h2>
-                    <p class="studio-brand-paragraph">
-                        Impeccable geometric parting patterns, uniform precision tension control, and premium protective crown executions tailored for an elite visual identity profile.
-                    </p>
-                    <div class="studio-trust-metric">
-                        <span class="metric-number">2018</span>
-                        <span class="metric-label">Established /<br>Laurel, MD</span>
-                    </div>
-                </div>
+   THE SIGNATURE SERVICE SHOWCASE — LUXURY EDITORIAL ASYMMETRIC GRID
+   ========================================================================== -->
+<section class="editorial-showcase-canvas" id="services">
+    <div class="showcase-fluid-container">
+        
+        <!-- Premium Section Header Matrix -->
+        <div class="showcase-marquee-row">
+            <div class="marquee-title-wrapper">
+                <span class="showcase-serial-tag">// PREMIUM SELECTION</span>
+                <h2 class="showcase-main-heading">Luxury Braiding <span class="serif-italic-glyph">Experience</span></h2>
             </div>
-            
-            <!-- Right Flow Column: High-End Asymmetrical Interactive Track -->
-            <div class="studio-interactive-track">
-                
-                <!-- Offering Segment 01 -->
-                <div class="studio-offering-row active">
-                    <div class="row-hover-indicator"></div>
-                    <div class="row-index-wrapper">
-                        <span class="row-num">01</span>
-                    </div>
-                    
-                    <div class="row-media-frame">
-                        <div class="media-aspect-ratio">
-                            <img src="{% static 'images/Kknotless.jpg' %}" alt="Knotless Box Braids Masterwork" class="row-image">
-                            <div class="media-tint-overlay"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="row-text-block">
-                        <div class="row-header-line">
-                            <h3 class="offering-title">Knotless Box Braids</h3>
-                            <div class="offering-cta-trigger">
-                                <!--<span class="cta-label">Reserve Session</span>-->
-                                <div class="cta-icon-circle"><i class="fa-solid fa-arrow-up-right"></i></div>
-                            </div>
-                        </div>
-                        <div class="row-expandable-body">
-                            <p class="offering-long-desc">
-                                Weightless, tension-free baseline attachment patterns designed exclusively for extended, flawless protective wear and total crown health maximization.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Offering Segment 02 -->
-                <div class="studio-offering-row">
-                    <div class="row-hover-indicator"></div>
-                    <div class="row-index-wrapper">
-                        <span class="row-num">02</span>
-                    </div>
-                    
-                    <div class="row-media-frame">
-                        <div class="media-aspect-ratio">
-                            <img src="{% static 'images/stitch.jpg' %}" alt="Stitch Cornrows Precision Work" class="row-image">
-                            <div class="media-tint-overlay"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="row-text-block">
-                        <div class="row-header-line">
-                            <h3 class="offering-title">Stitch Braids &amp; Cornrows</h3>
-                            <div class="offering-cta-trigger">
-                                <!--<span class="cta-label">Reserve Session</span>-->
-                                <div class="cta-icon-circle"><i class="fa-solid fa-arrow-up-right"></i></div>
-                            </div>
-                        </div>
-                        <div class="row-expandable-body">
-                            <p class="offering-long-desc">
-                                Clean geometric parting execution fields with razor-sharp finish density profiles, flawless tracking pathways, and pristine linear symmetry.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Offering Segment 03 -->
-                <div class="studio-offering-row">
-                    <div class="row-hover-indicator"></div>
-                    <div class="row-index-wrapper">
-                        <span class="row-num">03</span>
-                    </div>
-                    
-                    <div class="row-media-frame">
-                        <div class="media-aspect-ratio">
-                            <img src="{% static 'images/bohemian.jpg' %}" alt="Goddess Bohemian Mixed Styling" class="row-image">
-                            <div class="media-tint-overlay"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="row-text-block">
-                        <div class="row-header-line">
-                            <h3 class="offering-title">Goddess &amp; Bohemian Mix</h3>
-                            <div class="offering-cta-trigger">
-                                <!--<span class="cta-label">Reserve Session</span>-->
-                                <div class="cta-icon-circle"><i class="fa-solid fa-arrow-up-right"></i></div>
-                            </div>
-                        </div>
-                        <div class="row-expandable-body">
-                            <p class="offering-long-desc">
-                                Intricate custom luxury combinations weaving soft, premium cascading bohemian curls into traditional master layout braid formats.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="marquee-descriptor-wrapper">
+                <p class="showcase-abstract-text">
+                    Discover beautifully crafted protective styles designed with precision, comfort, and luxury. Every braid is customized to complement your beauty while protecting the health of your hair.
+                </p>
             </div>
-            
         </div>
+
+        <!-- High-Fidelity Asymmetric Layout Grid Matrix -->
+        <div class="showcase-asymmetric-matrix">
+            
+            <!-- Service Item 01 (Formerly Featured Bestseller - Now Restructured Perfectly) -->
+            <div class="showcase-grid-block block-focal-portrait">
+                <div class="block-structural-card">
+                    <div class="block-media-viewport">
+                        <img src="{% static 'images/braids.jpeg' %}" alt="Knotless Box Braids" class="block-core-image">
+                        <div class="block-tint-overlay"></div>
+                        <span class="card-tag gold-tag">MOST POPULAR</span>
+                    </div>
+                    <div class="block-meta-envelope">
+                        <div class="block-header-line">
+                            <h3 class="block-display-title">Knotless Box Braids</h3>
+                            <div class="block-price-badge">$180</div>
+                        </div>
+                        <p class="block-short-description">
+                            Lightweight, elegant and long-lasting knotless braids created with perfect tension and flawless parting for maximum comfort and luxury wear.
+                        </p>
+                        <div class="block-card-footer">
+                            <span class="meta-item"><i class="fa-solid fa-clock"></i> 3–7 Hours</span>
+                            <span class="meta-item"><i class="fa-solid fa-star"></i> 4.9 Rating</span>
+                            <!--<a href="#booking" class="minimal-action-link">Book Now <i class="fa-solid fa-arrow-right"></i></a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Item 02 -->
+            <div class="showcase-grid-block block-offset-portrait">
+                <div class="block-structural-card">
+                    <div class="block-media-viewport">
+                        <img src="{% static 'images/braids2.jpeg' %}" alt="Stitch Braids" class="block-core-image">
+                        <div class="block-tint-overlay"></div>
+                        <span class="card-tag">TRENDING</span>
+                    </div>
+                    <div class="block-meta-envelope">
+                        <div class="block-header-line">
+                            <h3 class="block-display-title">Stitch Braids</h3>
+                            <div class="block-price-badge">$120</div>
+                        </div>
+                        <p class="block-short-description">
+                            Crisp geometric parting with clean, luxurious stitch techniques designed for a sleek modern and pristine appearance.
+                        </p>
+                        <div class="block-card-footer">
+                            <span class="meta-item"><i class="fa-solid fa-clock"></i> 2–5 Hours</span>
+                            <span class="meta-item"><i class="fa-solid fa-star"></i> 4.8</span>
+                            <!--<a href="#booking" class="minimal-action-link"><i class="fa-solid fa-arrow-right"></i></a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Item 03 -->
+            <div class="showcase-grid-block block-focal-portrait">
+                <div class="block-structural-card">
+                    <div class="block-media-viewport">
+                        <img src="{% static 'images/braids8.jpeg' %}" alt="Bohemian Braids" class="block-core-image">
+                        <div class="block-tint-overlay"></div>
+                        <span class="card-tag gold-tag">LUXURY</span>
+                    </div>
+                    <div class="block-meta-envelope">
+                        <div class="block-header-line">
+                            <h3 class="block-display-title">Bohemian Braids</h3>
+                            <div class="block-price-badge">$220</div>
+                        </div>
+                        <p class="block-short-description">
+                            Premium curly extensions blended beautifully into handcrafted braids for a soft glamorous and pristine editorial finish.
+                        </p>
+                        <div class="block-card-footer">
+                            <span class="meta-item"><i class="fa-solid fa-clock"></i> 5–8 Hours</span>
+                            <span class="meta-item"><i class="fa-solid fa-star"></i> 4.9</span>
+                            <!--<a href="#booking" class="minimal-action-link"><i class="fa-solid fa-arrow-right"></i></a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Item 04 -->
+            <div class="showcase-grid-block block-offset-portrait">
+                <div class="block-structural-card">
+                    <div class="block-media-viewport">
+                        <img src="{% static 'images/braids12.jpeg' %}" alt="Medium Knotless" class="block-core-image">
+                        <div class="block-tint-overlay"></div>
+                        <span class="card-tag">BESTSELLER</span>
+                    </div>
+                    <div class="block-meta-envelope">
+                        <div class="block-header-line">
+                            <h3 class="block-display-title">Medium Knotless</h3>
+                            <div class="block-price-badge">$170</div>
+                        </div>
+                        <p class="block-short-description">
+                            Timeless medium-sized knotless braids delivering the perfect balance between elegance and daily protective styling versatility.
+                        </p>
+                        <div class="block-card-footer">
+                            <span class="meta-item"><i class="fa-solid fa-clock"></i> 4–6 Hours</span>
+                            <span class="meta-item"><i class="fa-solid fa-star"></i> 5.0</span>
+                            <!--<a href="#booking" class="minimal-action-link"><i class="fa-solid fa-arrow-right"></i></a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Structural Performance Stats Track -->
+        <div class="luxury-stats-track">
+            <div class="stat-node">
+                <h4 class="stat-value">1200+</h4>
+                <p class="stat-label">Happy Clients</p>
+            </div>
+            <div class="stat-node">
+                <h4 class="stat-value">8+</h4>
+                <p class="stat-label">Years Experience</p>
+            </div>
+            <div class="stat-node">
+                <h4 class="stat-value">4.9★</h4>
+                <p class="stat-label">Average Rating</p>
+            </div>
+            <div class="stat-node">
+                <h4 class="stat-value">100%</h4>
+                <p class="stat-label">Premium Products</p>
+            </div>
+        </div>
+        
     </div>
 </section>
 
 <!-- ==========================================================================
-   CRAFTSMANSHIP EXPERIENCE SECTION (WHY CHOOSE US)
+   CRAFTSMANSHIP EXPERIENCE SECTION (PREMIUM WHITE WITH HIGHLIGHT CARDS)
    ========================================================================== -->
-<section class="luxury-experience-section">
-    <div class="experience-container">
+<section class="luxury-experience-section" id="why-us">
+    <div class="experience-fluid-container">
         
-        <!-- Header Zone -->
-        <div class="experience-header">
-            <span class="experience-tagline">The Art of Braiding</span>
-            <h2 class="experience-title">Why Row With Braids by Rabiya</h2>
-            <div class="experience-accent-line"></div>
+        <!-- Luxury Minimalist Header Zone -->
+        <div class="experience-header-matrix">
+            <span class="experience-serial-tag">// CRAFTSMANSHIP</span>
+            <h2 class="experience-main-title">Why Choose <span class="serif-italic-glyph">Braids by Rabiya</span></h2>
+            <p class="experience-subtitle-text">
+                Where elite technical precision meets clean, modern protective styling.
+            </p>
         </div>
 
-        <!-- Features Grid -->
-        <div class="experience-grid">
+        <!-- The Premium High-Fidelity Features Grid Matrix -->
+        <div class="experience-asymmetric-grid">
             
-            <!-- Card 1 -->
-            <div class="experience-card">
-                <div class="card-icon-wrapper">
+            <!-- Feature Card 01 -->
+            <div class="experience-feature-node">
+                <div class="node-icon-envelope">
                     <i class="fa-solid fa-crown"></i>
                 </div>
-                <h3 class="card-heading">Master Artistry</h3>
-                <p class="card-description">Crafted with precision since 2018. Every tension, parting, and stitch is balanced to protect your natural hair while delivering an uncompromised luxury finish.</p>
+                <h3 class="node-display-heading">Master Artistry</h3>
+                <p class="node-abstract-description">
+                    Crafted with pristine precision since 2018. Every level of tension, parting, and stitch is perfectly balanced to protect your natural hair while delivering an uncompromised luxury finish.
+                </p>
+                <div class="node-interactive-border"></div>
             </div>
 
-            <!-- Card 2 -->
-            <div class="experience-card">
-                <div class="card-icon-wrapper">
+            <!-- Feature Card 02 -->
+            <div class="experience-feature-node">
+                <div class="node-icon-envelope">
                     <i class="fa-solid fa-heart-pulse"></i>
                 </div>
-                <h3 class="card-heading">Hair Health First</h3>
-                <p class="card-description">We prioritize edge protection and scalp comfort. Our premium installation techniques guarantee look longevity without causing excessive stress or breakage.</p>
+                <h3 class="node-display-heading">Hair Health First</h3>
+                <p class="node-abstract-description">
+                    We strictly prioritize edge protection and scalp comfort. Our premium installation techniques guarantee look longevity without causing excessive stress, tension, or breakage.
+                </p>
+                <div class="node-interactive-border"></div>
             </div>
 
-            <!-- Card 3 -->
-            <div class="experience-card">
-                <div class="card-icon-wrapper">
+            <!-- Feature Card 03 -->
+            <div class="experience-feature-node">
+                <div class="node-icon-envelope">
                     <i class="fa-solid fa-gem"></i>
                 </div>
-                <h3 class="card-heading">Bespoke Styling</h3>
-                <p class="card-description">Tailored closely to your unique aesthetic preferences. From modern trends to classic protective extensions, we customize layouts for your exact crown profile.</p>
+                <h3 class="node-display-heading">Bespoke Styling</h3>
+                <p class="node-abstract-description">
+                    Tailored closely to your unique aesthetic preferences. From modern trends to classic protective extensions, we customize every layout for your exact crown profile.
+                </p>
+                <div class="node-interactive-border"></div>
             </div>
 
         </div>
@@ -276,71 +306,82 @@
 </section>
 
 <!-- ==========================================================================
-     THE METHODOLOGY PIPELINE SECTION
-     ========================================================================== -->
-<section class="studio-pipeline" id="process">
-    <div class="pipeline-axis-line"></div>
-    
-    <div class="pipeline-container">
-        <!-- Structural Section Header -->
-        <div class="pipeline-header">
-            <div class="pipeline-kicker">
-                <span class="kicker-dash"></span>
-                <span class="kicker-label">The Execution Matrix</span>
+   THE METHODOLOGY PIPELINE SECTION — LUXURY ARCHITECTURAL TIMELINE
+   ========================================================================== -->
+<section class="studio-pipeline-canvas" id="process">
+    <div class="pipeline-fluid-container">
+        
+        <!-- Premium Asymmetric Section Header -->
+        <div class="pipeline-marquee-row">
+            <div class="marquee-title-wrapper">
+                <span class="pipeline-serial-tag">// THE EXECUTION MATRIX</span>
+                <h2 class="pipeline-main-title">The Master <span class="serif-italic-glyph">Process</span></h2>
             </div>
-            <h2 class="pipeline-main-title">The Master Process</h2>
-            <p class="pipeline-subtitle">An uncompromising three-stage execution blueprint dedicated to structural integrity, pristine symmetry, and natural crown health.</p>
+            <div class="marquee-descriptor-wrapper">
+                <p class="pipeline-abstract-text">
+                    An uncompromising three-stage execution blueprint dedicated to structural integrity, pristine symmetry, and natural crown health.
+                </p>
+            </div>
         </div>
 
-        <!-- Architectural Layout Steps Grid -->
-        <div class="pipeline-grid">
+        <!-- High-Fidelity Interconnected Step Matrix -->
+        <div class="pipeline-interactive-matrix">
             
-            <!-- Step 01 -->
-            <div class="pipeline-step-card">
-                <div class="step-card-bg"></div>
-                <div class="step-top-row">
-                    <span class="step-index">01</span>
-                    <div class="step-icon-box">
+            <!-- Horizontal Structural Connection Track (Desktop Only) -->
+            <div class="matrix-horizontal-spine"></div>
+            
+            <!-- Step Node 01 -->
+            <div class="pipeline-step-node">
+                <div class="node-interactive-accent"></div>
+                <div class="node-structural-header">
+                    <div class="index-badge-envelope">
+                        <span class="node-numeric-index">01</span>
+                    </div>
+                    <div class="node-icon-box">
                         <i class="fa-solid fa-wand-magic-sparkles"></i>
                     </div>
                 </div>
-                <div class="step-content">
-                    <h3 class="step-title">Preparation &amp; Parting</h3>
-                    <p class="step-description">
+                <div class="node-body-content">
+                    <h3 class="node-display-title">Preparation &amp; Parting</h3>
+                    <p class="node-abstract-description">
                         Every execution begins with a detoxifying cleanse and a deep-conditioning blow-out. Hair fields are mapped meticulously into micro-geometric parting lines tailored strictly to your natural hair density profiles.
                     </p>
                 </div>
             </div>
 
-            <!-- Step 02 -->
-            <div class="pipeline-step-card">
-                <div class="step-card-bg"></div>
-                <div class="step-top-row">
-                    <span class="step-index">02</span>
-                    <div class="step-icon-box">
+            <!-- Step Node 02 -->
+            <div class="pipeline-step-node">
+                <div class="node-interactive-accent"></div>
+                <div class="node-structural-header">
+                    <div class="index-badge-envelope">
+                        <span class="node-numeric-index">02</span>
+                    </div>
+                    <div class="node-icon-box">
                         <i class="fa-solid fa-compass-drafting"></i>
                     </div>
                 </div>
-                <div class="step-content">
-                    <h3 class="step-title">Tension Engineering</h3>
-                    <p class="step-description">
+                <div class="node-body-content">
+                    <h3 class="node-display-title">Tension Engineering</h3>
+                    <p class="node-abstract-description">
                         Braids are systematically constructed using customized uniform-tension baseline attachments. This prevents point-load stress on hair follicles, ensuring an incredibly flat, weightless, and safe install.
                     </p>
                 </div>
             </div>
 
-            <!-- Step 03 -->
-            <div class="pipeline-step-card">
-                <div class="step-card-bg"></div>
-                <div class="step-top-row">
-                    <span class="step-index">03</span>
-                    <div class="step-icon-box">
+            <!-- Step Node 03 -->
+            <div class="pipeline-step-node">
+                <div class="node-interactive-accent"></div>
+                <div class="node-structural-header">
+                    <div class="index-badge-envelope">
+                        <span class="node-numeric-index">03</span>
+                    </div>
+                    <div class="node-icon-box">
                         <i class="fa-solid fa-sparkles"></i>
                     </div>
                 </div>
-                <div class="step-content">
-                    <h3 class="step-title">Sealing &amp; Crown Care</h3>
-                    <p class="step-description">
+                <div class="node-body-content">
+                    <h3 class="node-display-title">Sealing &amp; Crown Care</h3>
+                    <p class="node-abstract-description">
                         The composition is completed with a deep-set herbal misting bath and high-temperature precision hot-water dipping. The scalp is detailed with organic nutrient oils to lock in extended, crisp protective wear.
                     </p>
                 </div>
@@ -350,73 +391,356 @@
     </div>
 </section>
 
-<!-- ==========================================================================
-     PREMIUM SYMMETRIC PORTFOLIO EXHIBIT
-     ========================================================================== -->
-<section class="premium-exhibit" id="gallery">
-    <div class="exhibit-container">
+<section class="luxury-services-section">
+    <div class="services-container">
         
-        <!-- Clean Minimalist Header -->
-        <div class="exhibit-header">
-            <div class="exhibit-kicker">
-                <span class="kicker-line"></span>
-                <span class="kicker-text">The Studio Log</span>
+        <div class="services-header">
+            <div class="services-kicker-badge">
+                <span class="kicker-accent-dot"></span>
+                <span class="services-tagline">Our Service Menu</span>
             </div>
-            <h2 class="exhibit-title">Visual Lookbook</h2>
+            <h2 class="services-title">Premium Braiding & Protective Styles</h2>
+            <div class="services-accent-line"></div>
         </div>
 
-        <!-- Balanced Uniform Gallery Matrix -->
-        <div class="exhibit-grid">
+        <div class="category-block">
+            <h3 class="category-title">Bohemian & Gypsy Bobs</h3>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="service-time"><i class="fa-regular fa-clock"></i> 6 Hours</span>
+                            <span class="service-price">$240.00</span>
+                        </div>
+                        <h4 class="service-name">Medium Bob Bohemian</h4>
+                        <p class="service-desc">Crafted with beautiful premium human hair. Gives a full, messy-chic finish.</p>
+                        <ul class="service-notes-list">
+                            <li><i class="fa-solid fa-circle"></i> Human hair not included but available for sale</li>
+                            <li><i class="fa-solid fa-circle"></i> 1 Pack recommended</li>
+                            <li class="notice-item"><i class="fa-solid fa-circle-info"></i> Times are estimated; can take longer on some clients.</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer-action">
+                        <button class="select-service-btn">Select Style</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="service-time"><i class="fa-regular fa-clock"></i> 6 Hours 40 Mins</span>
+                            <span class="service-price">$310.00</span>
+                        </div>
+                        <h4 class="service-name">Small Bohemian Bob</h4>
+                        <p class="service-desc">Finely parted bohemian look for maximum density, movement, and fullness.</p>
+                        <ul class="service-notes-list">
+                            <li><i class="fa-solid fa-circle"></i> Human hair not included but available for sale</li>
+                            <li><i class="fa-solid fa-circle"></i> 1 - 2 Packs recommended</li>
+                            <li class="notice-item"><i class="fa-solid fa-circle-info"></i> Times are estimated; can take longer on some clients.</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer-action">
+                        <button class="select-service-btn">Select Style</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="service-time"><i class="fa-regular fa-clock"></i> 5 Hours 20 Mins</span>
+                            <span class="service-price">$270.00</span>
+                        </div>
+                        <h4 class="service-name">Small Medium Bohemian Bob</h4>
+                        <p class="service-desc">The perfect middle ground blend of parting size and clean volume.</p>
+                        <ul class="service-notes-list">
+                            <li><i class="fa-solid fa-circle"></i> Human hair not included but available for sale</li>
+                            <li><i class="fa-solid fa-circle"></i> 1 - 2 Packs recommended</li>
+                            <li class="notice-item"><i class="fa-solid fa-circle-info"></i> Times are estimated; can take longer on some clients.</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer-action">
+                        <button class="select-service-btn">Select Style</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="service-time"><i class="fa-regular fa-clock"></i> 6 Hours</span>
+                            <span class="service-price">$350.00</span>
+                        </div>
+                        <h4 class="service-name">Medium Gypsy Bob</h4>
+                        <p class="service-desc">Bob cut style only. Intricate detailing for an effortless layered visual look.</p>
+                        <ul class="service-notes-list">
+                            <li><i class="fa-solid fa-circle"></i> Human hair not included but available for sale</li>
+                            <li><i class="fa-solid fa-circle"></i> 1 - 2 Packs recommended</li>
+                            <li class="notice-item"><i class="fa-solid fa-circle-info"></i> Times are estimated; can take longer on some clients.</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer-action">
+                        <button class="select-service-btn">Select Style</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="service-time"><i class="fa-regular fa-clock"></i> 8 Hours 20 Mins</span>
+                            <span class="service-price">$450.00</span>
+                        </div>
+                        <h4 class="service-name">Smedium Gypsy Bob</h4>
+                        <p class="service-desc">Flawless tension-free knotless application on a classic hybrid gypsy bob look.</p>
+                        <ul class="service-notes-list">
+                            <li><i class="fa-solid fa-circle"></i> Human hair not included but available for sale</li>
+                            <li><i class="fa-solid fa-circle"></i> 1 - 2 Packs recommended</li>
+                            <li class="notice-item"><i class="fa-solid fa-circle-info"></i> Times are estimated; can take longer on some clients.</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer-action">
+                        <button class="select-service-btn">Select Style</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="category-block">
+            <h3 class="category-title">Signature Knotless Collection</h3>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="service-time"><i class="fa-regular fa-clock"></i> 2 Hours 30 Mins</span>
+                            <span class="service-price">$180.00</span>
+                        </div>
+                        <h4 class="service-name">Jumbo Knotless</h4>
+                        <span class="length-badge">Waist Length</span>
+                        <div class="color-palette-wrapper">
+                            <h5>Available Colors:</h5>
+                            <p>1, 1b, 2, 4, 33, 350, 613, 700s, 27, 30, Burgundy</p>
+                        </div>
+                        <div class="add-on-alert info-gold">
+                            <span class="alert-title">Ombré Add-on Available:</span>
+                            <p>+$40 Extra (Minimum length: Waist length. No ombré allowed on midback lengths).</p>
+                        </div>
+                    </div>
+                    <div class="card-footer-action">
+                        <button class="select-service-btn">Select Style</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="service-time"><i class="fa-regular fa-clock"></i> 3 Hours</span>
+                            <span class="service-price">$180.00</span>
+                        </div>
+                        <h4 class="service-name">Large Knotless</h4>
+                        <span class="length-badge">Bra Strap Length</span>
+                        <ul class="service-notes-list inline-perks">
+                            <li><i class="fa-solid fa-circle-check"></i> Braiding hair is included</li>
+                            <li><i class="fa-solid fa-arrow-down-long"></i> Click book & scroll to add extra length</li>
+                        </ul>
+                        <div class="color-palette-wrapper">
+                            <h5>Available Colors:</h5>
+                            <p>1, 1b, 2, 4, 33, 350, 613, 700s, 27, 30, Burgundy</p>
+                        </div>
+                        <div class="add-on-alert info-gold">
+                            <span class="alert-title">Ombré Add-on Available:</span>
+                            <p>+$40 Extra</p>
+                        </div>
+                    </div>
+                    <div class="card-footer-action">
+                        <button class="select-service-btn">Select Style</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="service-time"><i class="fa-regular fa-clock"></i> 3 Hours 20 Mins</span>
+                            <span class="service-price">$200.00</span>
+                        </div>
+                        <h4 class="service-name">Medium Size Knotless</h4>
+                        <span class="length-badge">Bra Strap Length</span>
+                        <ul class="service-notes-list inline-perks">
+                            <li><i class="fa-solid fa-circle-check"></i> Braiding hair is included</li>
+                            <li><i class="fa-solid fa-arrow-down-long"></i> Click book & scroll to add extra length</li>
+                        </ul>
+                        <div class="color-palette-wrapper">
+                            <h5>Available Colors:</h5>
+                            <p>1, 1b, 2, 4, 33, 350, 613, 700s, 27, 30, Burgundy</p>
+                        </div>
+                        <div class="add-on-alert info-gold">
+                            <span class="alert-title">Ombré Add-on Available:</span>
+                            <p>+$40 Extra</p>
+                        </div>
+                    </div>
+                    <div class="card-footer-action">
+                        <button class="select-service-btn">Select Style</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="service-time"><i class="fa-regular fa-clock"></i> 5 Hours 20 Mins</span>
+                            <span class="service-price">$230.00</span>
+                        </div>
+                        <h4 class="service-name">Small-Medium Knotless</h4>
+                        <span class="length-badge">Mid-Back Length</span>
+                        <div class="color-palette-wrapper">
+                            <h5>Available Colors:</h5>
+                            <p>1, 1b, 2, 4, 33, 350, 613, 700s, 27, 30, Burgundy</p>
+                        </div>
+                        <div class="add-on-alert danger-red">
+                            <span class="alert-title">Strict Policy Notice:</span>
+                            <p>Ombré selection is unavailable for midback length styles. (+$40 Ombré requires Waist length minimum).</p>
+                        </div>
+                    </div>
+                    <div class="card-footer-action">
+                        <button class="select-service-btn">Select Style</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="service-time"><i class="fa-regular fa-clock"></i> 6 Hours</span>
+                            <span class="service-price">$280.00</span>
+                        </div>
+                        <h4 class="service-name">Small Knotless</h4>
+                        <span class="length-badge">Mid-Back Length</span>
+                        <div class="color-palette-wrapper">
+                            <h5>Available Colors:</h5>
+                            <p>1, 1b, 2, 4, 33, 350, 613, 700s, 27, 30, Burgundy</p>
+                        </div>
+                        <div class="add-on-alert danger-red">
+                            <span class="alert-title">Strict Policy Notice:</span>
+                            <p>Ombré selection is unavailable for midback length styles. (+$40 Ombré requires Waist length minimum).</p>
+                        </div>
+                    </div>
+                    <div class="card-footer-action">
+                        <button class="select-service-btn">Select Style</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="service-time"><i class="fa-regular fa-clock"></i> 8 Hours</span>
+                            <span class="service-price">$580.00</span>
+                        </div>
+                        <h4 class="service-name">Extra Small Knotless</h4>
+                        <span class="length-badge">Waist Length</span>
+                        <div class="color-palette-wrapper">
+                            <h5>Available Colors:</h5>
+                            <p>1, 1b, 2, 4, 33, 350, 613, 700s, 27, 30, Burgundy</p>
+                        </div>
+                        <div class="add-on-alert info-gold">
+                            <span class="alert-title">Ombré Add-on Available:</span>
+                            <p>+$40 Extra (Minimum length: Waist length. No ombré allowed on midback lengths).</p>
+                        </div>
+                    </div>
+                    <div class="card-footer-action">
+                        <button class="select-service-btn">Select Style</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ==========================================================================
+   PREMIUM SYMMETRIC PORTFOLIO EXHIBIT — PURE WHITE ARCHITECTURAL LOOKBOOK
+   ========================================================================== -->
+<section class="premium-exhibit-canvas" id="gallery">
+    <div class="exhibit-fluid-container">
+        
+        <!-- Premium Asymmetric Section Header Axis -->
+        <div class="exhibit-marquee-row">
+            <div class="marquee-title-wrapper">
+                <div class="exhibit-kicker-badge">
+                    <span class="kicker-accent-dot"></span>
+                    <span class="kicker-display-text">The Studio Log</span>
+                </div>
+                <h2 class="exhibit-main-title">Visual <span class="serif-italic-glyph">Lookbook</span></h2>
+            </div>
+            <div class="marquee-descriptor-wrapper">
+                <p class="exhibit-abstract-text">
+                    A curated high-fidelity gallery highlighting clean geometric layouts, intricate structural parting, and pristine protective crown styling.
+                </p>
+            </div>
+        </div>
+
+        <!-- Perfectly Balanced Geometric 4-Column Grid -->
+        <div class="exhibit-structural-grid">
             
             <!-- Frame 01 -->
-            <div class="exhibit-card">
+            <div class="exhibit-interactive-card">
                 <div class="card-image-window">
                     <img src="{% static 'images/gallery-1.jpg' %}" alt="Pristine Parting Layouts Showcase" class="exhibit-img">
-                    <div class="card-glass-overlay"></div>
-                    <span class="card-index">01</span>
+                    <div class="card-ambient-overlay"></div>
+                    <span class="card-numeric-tag">01</span>
                 </div>
-                <div class="card-metadata">
-                    <h3 class="metadata-heading">Pristine Parting Layouts</h3>
-                    <span class="metadata-sub">Master Execution</span>
+                <div class="card-metadata-block">
+                    <div class="metadata-text-envelope">
+                        <h3 class="metadata-display-heading">Pristine Parting Layouts</h3>
+                        <span class="metadata-sub-label">Master Execution</span>
+                    </div>
+                    <div class="metadata-interactive-bar"></div>
                 </div>
             </div>
 
             <!-- Frame 02 -->
-            <div class="exhibit-card">
+            <div class="exhibit-interactive-card">
                 <div class="card-image-window">
                     <img src="{% static 'images/gallerys3.jpg' %}" alt="Knotless Grid Detailing Showcase" class="exhibit-img">
-                    <div class="card-glass-overlay"></div>
-                    <span class="card-index">02</span>
+                    <div class="card-ambient-overlay"></div>
+                    <span class="card-numeric-tag">02</span>
                 </div>
-                <div class="card-metadata">
-                    <h3 class="metadata-heading">Knotless Grid Detailing</h3>
-                    <span class="metadata-sub">Precision Craft</span>
+                <div class="card-metadata-block">
+                    <div class="metadata-text-envelope">
+                        <h3 class="metadata-display-heading">Knotless Grid Detailing</h3>
+                        <span class="metadata-sub-label">Precision Craft</span>
+                    </div>
+                    <div class="metadata-interactive-bar"></div>
                 </div>
             </div>
 
             <!-- Frame 03 -->
-            <div class="exhibit-card">
+            <div class="exhibit-interactive-card">
                 <div class="card-image-window">
                     <img src="{% static 'images/gallery-3.jpg' %}" alt="Boho Cascade Finish Showcase" class="exhibit-img">
-                    <div class="card-glass-overlay"></div>
-                    <span class="card-index">03</span>
+                    <div class="card-ambient-overlay"></div>
+                    <span class="card-numeric-tag">03</span>
                 </div>
-                <div class="card-metadata">
-                    <h3 class="metadata-heading">Boho Cascade Finish</h3>
-                    <span class="metadata-sub">Signature Style</span>
+                <div class="card-metadata-block">
+                    <div class="metadata-text-envelope">
+                        <h3 class="metadata-display-heading">Boho Cascade Finish</h3>
+                        <span class="metadata-sub-label">Signature Style</span>
+                    </div>
+                    <div class="metadata-interactive-bar"></div>
                 </div>
             </div>
 
             <!-- Frame 04 -->
-            <div class="exhibit-card">
+            <div class="exhibit-interactive-card">
                 <div class="card-image-window">
                     <img src="{% static 'images/gallery-4.jpg' %}" alt="Premium Protective Styling Showcase" class="exhibit-img">
-                    <div class="card-glass-overlay"></div>
-                    <span class="card-index">04</span>
+                    <div class="card-ambient-overlay"></div>
+                    <span class="card-numeric-tag">04</span>
                 </div>
-                <div class="card-metadata">
-                    <h3 class="metadata-heading">Premium Protective Styling</h3>
-                    <span class="metadata-sub">Crown Health</span>
+                <div class="card-metadata-block">
+                    <div class="metadata-text-envelope">
+                        <h3 class="metadata-display-heading">Premium Protective Styling</h3>
+                        <span class="metadata-sub-label">Crown Health</span>
+                    </div>
+                    <div class="metadata-interactive-bar"></div>
                 </div>
             </div>
 
@@ -427,42 +751,45 @@
 <!-- ==========================================================================
      THE INVESTMENT & APPOINTMENT INTELLIGENCE MATRIX
      ========================================================================== -->
-<section class="studio-investment" id="investment">
-    <div class="investment-container">
+<section class="studio-investment-canvas" id="investment">
+    <div class="investment-fluid-container">
         <div class="investment-split-architecture">
             
             <!-- Left Column: Premium Rates Tier Menu -->
             <div class="investment-rates-panel">
-                <div class="investment-kicker">
-                    <span class="kicker-line"></span>
-                    <span class="kicker-text">Transparent Value</span>
+                <div class="investment-kicker-badge">
+                    <span class="kicker-accent-dot"></span>
+                    <span class="kicker-display-text">Transparent Value</span>
                 </div>
-                <h2 class="investment-title">Session Rates</h2>
-                <p class="investment-lead">Every booking is executed with premium pre-stretched extension hair, clarifying hair paths, and dedicated customization fields.</p>
+                <h2 class="investment-main-title">Session Rates</h2>
+                <p class="investment-abstract-lead">Every booking is executed with premium pre-stretched extension hair, clarifying hair paths, and dedicated customization fields.</p>
                 
                 <div class="rates-menu-container">
                     <!-- Rate Item 01 -->
-                    <div class="rate-menu-row">
+                    <div class="rate-menu-card">
                         <div class="rate-main-meta">
                             <h3 class="rate-service-name">Knotless Box Braids</h3>
+                            <div class="rate-alignment-leader"></div>
                             <span class="rate-price-anchor">from $220</span>
                         </div>
                         <p class="rate-service-subtext">Includes customized density parts and matching natural extension fibers.</p>
                     </div>
 
                     <!-- Rate Item 02 -->
-                    <div class="rate-menu-row">
+                    <div class="rate-menu-card">
                         <div class="rate-main-meta">
                             <h3 class="rate-service-name">Stitch Braids &amp; Cornrows</h3>
+                            <div class="rate-alignment-leader"></div>
                             <span class="rate-price-anchor">from $140</span>
                         </div>
                         <p class="rate-service-subtext">High-definition precision edge lines and uniform tracking profile paths.</p>
                     </div>
 
                     <!-- Rate Item 03 -->
-                    <div class="rate-menu-row">
+                    <div class="rate-menu-card">
                         <div class="rate-main-meta">
                             <h3 class="rate-service-name">Goddess Bohemian Mix</h3>
+                            <div class="rate-alignment-leader"></div>
                             <span class="rate-price-anchor">from $260</span>
                         </div>
                         <p class="rate-service-subtext">Premium human hair curls woven into individual protective braid bases.</p>
@@ -470,31 +797,35 @@
                 </div>
 
                 <a href="{% url 'contact' %}" class="investment-action-btn">
-                    <span>Initiate Booking Request</span>
-                    <i class="fa-solid fa-arrow-right"></i>
+                    <span class="btn-text-label">Initiate Booking Request</span>
+                    <span class="btn-arrow-wrapper">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
                 </a>
             </div>
 
             <!-- Right Column: Structural Expert Intelligence Accordions -->
             <div class="investment-intel-panel">
-                <div class="investment-kicker">
-                    <span class="kicker-line"></span>
-                    <span class="kicker-text">Client Intelligence</span>
+                <div class="investment-kicker-badge">
+                    <span class="kicker-accent-dot"></span>
+                    <span class="kicker-display-text">Client Intelligence</span>
                 </div>
-                <h2 class="investment-title">Appointment FAQ</h2>
+                <h2 class="investment-main-title">Appointment FAQ</h2>
                 
                 <div class="intel-accordion-track">
                     
-                    <!-- Accordion Item 01 (Active state example) -->
+                    <!-- Accordion Item 01 (Active State Default Example) -->
                     <div class="intel-accordion-block active">
                         <div class="accordion-trigger-bar">
                             <h4 class="accordion-question">What hair preparation is required prior to my session?</h4>
                             <div class="accordion-status-indicator"></div>
                         </div>
                         <div class="accordion-response-panel">
-                            <p class="accordion-answer-text">
-                                For maximum execution quality, we request your natural hair arrives thoroughly washed, detangled, and entirely blown out clean without oily surface products. If you require in-house texturizing prep, please append the treatment option to your reservation form.
-                            </p>
+                            <div class="accordion-inner-content">
+                                <p class="accordion-answer-text">
+                                    For maximum execution quality, we request your natural hair arrives thoroughly washed, detangled, and entirely blown out clean without oily surface products. If you require in-house texturizing prep, please append the treatment option to your reservation form.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
@@ -505,9 +836,11 @@
                             <div class="accordion-status-indicator"></div>
                         </div>
                         <div class="accordion-response-panel">
-                            <p class="accordion-answer-text">
-                                Yes. We supply ultra-premium, hypoallergenic pre-stretched attachment fibers across all natural standard color variants to ensure immaculate, weightless color blending and a polished, professional finish.
-                            </p>
+                            <div class="accordion-inner-content">
+                                <p class="accordion-answer-text">
+                                    Yes. We supply ultra-premium, hypoallergenic pre-stretched attachment fibers across all natural standard color variants to ensure immaculate, weightless color blending and a polished, professional finish.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
@@ -518,9 +851,11 @@
                             <div class="accordion-status-indicator"></div>
                         </div>
                         <div class="accordion-response-panel">
-                            <p class="accordion-answer-text">
-                                With disciplined structural care management (satin sleep crowns and hydration mist application routines), our signature knotless protective installations maintain total crisp symmetry fields for 6 to 8 weeks comfortably.
-                            </p>
+                            <div class="accordion-inner-content">
+                                <p class="accordion-answer-text">
+                                    With disciplined structural care management (satin sleep crowns and hydration mist application routines), our signature knotless protective installations maintain total crisp symmetry fields for 6 to 8 weeks comfortably.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
@@ -532,14 +867,17 @@
 </section>
 
 <!-- ==========================================================================
-   CLIENT TESTIMONIALS SECTION (TRUST & REVIEWS GRID)
-   ========================================================================== -->
+     CLIENT TESTIMONIALS SECTION (PREMIUM TRUST & REVIEWS GRID)
+     ========================================================================== -->
 <section class="luxury-testimonials-section">
     <div class="testimonials-container">
         
         <!-- Header Framework -->
         <div class="testimonials-header">
-            <span class="testimonials-tagline">Client Experiences</span>
+            <div class="testimonials-kicker-badge">
+                <span class="kicker-accent-dot"></span>
+                <span class="testimonials-tagline">Client Experiences</span>
+            </div>
             <h2 class="testimonials-title">Voices of Our Crowned Guests</h2>
             <div class="testimonials-accent-line"></div>
         </div>
@@ -547,57 +885,63 @@
         <!-- Master Testimonials Grid -->
         <div class="testimonials-grid">
             
-            <!-- Review 1 -->
+            <!-- Review 01 -->
             <div class="testimonial-card">
-                <div class="testimonial-rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <blockquote class="testimonial-quote">
-                    “Rabiya is a true artist! Her knotless braids are incredibly neat, lightweight, and she protects your edges perfectly. The environment is relaxing, and the craftsmanship is unmatched in Maryland.”
-                </blockquote>
-                <div class="testimonial-author">
-                    <span class="author-name">Aaliyah J.</span>
-                    <span class="author-verified"><i class="fa-solid fa-circle-check"></i> Verified Guest</span>
+                <div class="card-inner-wrapper">
+                    <div class="testimonial-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <blockquote class="testimonial-quote">
+                        “Rabiya is a true artist! Her knotless braids are incredibly neat, lightweight, and she protects your edges perfectly. The environment is relaxing, and the craftsmanship is unmatched in Maryland.”
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <span class="author-name">Aaliyah J.</span>
+                        <span class="author-verified"><i class="fa-solid fa-circle-check"></i> Verified Guest</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Review 2 -->
-            <div class="testimonial-card">
-                <div class="testimonial-rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <blockquote class="testimonial-quote">
-                    “The parts are crisp and perfectly symmetrical every single time. I constantly get compliments on my stitch braids. She cares deeply about hair health and comfort, not just the look.”
-                </blockquote>
-                <div class="testimonial-author">
-                    <span class="author-name">Tasha M.</span>
-                    <span class="author-verified"><i class="fa-solid fa-circle-check"></i> Verified Guest</span>
+            <!-- Review 02 (Featuring Structural Visual Elevation Accent) -->
+            <div class="testimonial-card feature-accented-card">
+                <div class="card-inner-wrapper">
+                    <div class="testimonial-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <blockquote class="testimonial-quote">
+                        “The parts are crisp and perfectly symmetrical every single time. I constantly get compliments on my stitch braids. She cares deeply about hair health and comfort, not just the look.”
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <span class="author-name">Tasha M.</span>
+                        <span class="author-verified"><i class="fa-solid fa-circle-check"></i> Verified Guest</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Review 3 -->
+            <!-- Review 03 -->
             <div class="testimonial-card">
-                <div class="testimonial-rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <blockquote class="testimonial-quote">
-                    “I’ve been coming here since 2019 and wouldn’t trust anyone else with my protective styles. Professional, punctual, and highly skilled execution. A flawless experience from start to finish.”
-                </blockquote>
-                <div class="testimonial-author">
-                    <span class="author-name">Kendra D.</span>
-                    <span class="author-verified"><i class="fa-solid fa-circle-check"></i> Verified Guest</span>
+                <div class="card-inner-wrapper">
+                    <div class="testimonial-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <blockquote class="testimonial-quote">
+                        “I’ve been coming here since 2019 and wouldn’t trust anyone else with my protective styles. Professional, punctual, and highly skilled execution. A flawless experience from start to finish.”
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <span class="author-name">Kendra D.</span>
+                        <span class="author-verified"><i class="fa-solid fa-circle-check"></i> Verified Guest</span>
+                    </div>
                 </div>
             </div>
 
@@ -636,7 +980,7 @@
                     <div class="icon-circle"><i class="fa-solid fa-map-location-dot"></i></div>
                     <div>
                         <label>Location Profile</label>
-                        <p>Laurel, Maryland</p>
+                        <p>13600 Baltimore Ave, Maryland</p>
                     </div>
                 </div>
             </div>
