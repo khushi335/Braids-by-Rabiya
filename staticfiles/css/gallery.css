@@ -44,50 +44,48 @@
 }
 
 /* ==========================================================================
-   HIGH-END MASONRY GRID SYSTEM (24 Card Array)
+   HIGH-END UNIFORM GRID SYSTEM
    ========================================================================== */
 .gallery-showcase-section {
     padding: 20px 0 100px 0;
     background-color: var(--clr-white);
 }
 
-/* Modern CSS Grid Columns that handle dynamic item scaling beautifully */
+/* Strictly balanced uniform grid column distributions */
 .gallery-masonry-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 30px;
 }
 
 .gallery-artwork-card {
-    background-color: var(--clr-bg);
+    background-color: #13100E; /* Deep luxury backdrop to pad fully visible uncropped images */
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     transition: transform 0.6s var(--ease-lux), box-shadow 0.6s var(--ease-lux);
-    border: 1px solid rgba(11, 8, 7, 0.03);
+    border: 1px solid rgba(11, 8, 7, 0.05);
+    border-radius: 4px;
 }
 
-/* Varying heights to generate an editorial look on desktop screens */
-.gallery-artwork-card.height-tall .card-media-frame {
-    aspect-ratio: 3 / 4.2;
-}
-
-.gallery-artwork-card.height-standard .card-media-frame {
-    aspect-ratio: 1 / 1;
-}
-
+/* Unifies all aspect ratios identically across desktop screens to guarantee clean symmetry */
 .card-media-frame {
     position: relative;
     width: 100%;
+    aspect-ratio: 4 / 5; /* Absolute uniform size format across the canvas */
     overflow: hidden;
-    background-color: #0b0807;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Preserves entire original image geometry with no top/bottom/side edge clipping */
 .gallery-render-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Shows full original framing cleanly */
+    padding: 8px; /* High-end luxury framing border space */
     transition: transform 1.2s var(--ease-lux);
 }
 
@@ -95,15 +93,16 @@
 .card-hover-metadata {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(11, 8, 7, 0) 30%, rgba(11, 8, 7, 0.85) 100%);
+    background: linear-gradient(to bottom, rgba(11, 8, 7, 0) 40%, rgba(11, 8, 7, 0.9) 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 30px;
+    padding: 24px;
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.5s var(--ease-lux), transform 0.5s var(--ease-lux);
     pointer-events: none;
+    z-index: 2;
 }
 
 .artwork-category {
@@ -112,11 +111,11 @@
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: var(--clr-gold);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .artwork-title {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 400;
     color: var(--clr-white);
     letter-spacing: -0.01em;
@@ -125,11 +124,11 @@
 /* Micro-Interaction Triggers */
 .gallery-artwork-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 25px 50px rgba(11, 8, 7, 0.08);
+    box-shadow: 0 25px 50px rgba(11, 8, 7, 0.15);
 }
 
 .gallery-artwork-card:hover .gallery-render-img {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .gallery-artwork-card:hover .card-hover-metadata {
@@ -155,6 +154,7 @@
 @media (max-width: 992px) {
     .gallery-masonry-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
 
@@ -172,16 +172,16 @@
         gap: 24px;
     }
 
-    /* Standardize aspect ratio on mobile screens to ensure ease of navigation */
-    .gallery-artwork-card.height-tall .card-media-frame,
-    .gallery-artwork-card.height-standard .card-media-frame {
+    /* Enforces persistent visual balance seamlessly on small screens */
+    .card-media-frame {
         aspect-ratio: 4 / 5;
     }
 
+    /* Maintains readable contrast on touch devices by defaulting visibility */
     .card-hover-metadata {
         opacity: 1;
         transform: translateY(0);
         padding: 20px;
-        background: linear-gradient(to bottom, rgba(11, 8, 7, 0) 50%, rgba(11, 8, 7, 0.75) 100%);
+        background: linear-gradient(to bottom, rgba(11, 8, 7, 0) 40%, rgba(11, 8, 7, 0.85) 100%);
     }
 }
