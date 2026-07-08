@@ -1200,7 +1200,7 @@ body {
 
 
 /* ==========================================================================
-   THE MODERN EDITORIAL SHOWCASE PATTERN (NEAT, CLEAN & PERFECT BALANCE)
+   THE MODERN EDITORIAL SHOWCASE PATTERN (OPTIMIZED CONTAINER AND GRIDS)
    ========================================================================== */
 :root {
     --clr-bg: #f8f6f2;
@@ -1214,42 +1214,42 @@ body {
 
 .editorial-showcase-canvas {
     background-color: var(--clr-bg);
-    padding: 140px 0;
+    padding: 60px 0;
     position: relative;
     width: 100%;
 }
 
 .showcase-fluid-container {
-    max-width: 1440px;
+    max-width: 1320px; /* Expands width to reduce extreme left/right empty whitespace gap */
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 32px; /* Adaptive container gutter border spacing */
 }
 
 /* --- Section Top Header Minimal Layout --- */
 .showcase-marquee-row {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
-    gap: 60px;
+    gap: 50px;
     align-items: flex-end;
     border-bottom: 1px solid rgba(26, 19, 16, 0.08);
-    padding-bottom: 50px;
-    margin-bottom: 80px;
+    padding-bottom: 40px;
+    margin-bottom: 70px;
 }
 
 .showcase-serial-tag {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.25em;
     color: var(--clr-gold);
     display: block;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .showcase-main-heading {
     font-family: var(--font-serif, serif);
-    font-size: 4.2rem;
+    font-size: 3.6rem;
     font-weight: 300;
-    line-height: 1.1;
+    line-height: 1.15;
     letter-spacing: -0.02em;
     color: var(--clr-dark);
 }
@@ -1262,8 +1262,8 @@ body {
 }
 
 .showcase-abstract-text {
-    font-size: 1.05rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.75;
     color: var(--clr-muted);
 }
 
@@ -1271,8 +1271,10 @@ body {
 .showcase-asymmetric-matrix {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
-    row-gap: 90px;
+    gap: 45px; /* Keeps horizontal card positioning clean and unified */
+    row-gap: 80px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .showcase-grid-block {
@@ -1287,47 +1289,52 @@ body {
     background: var(--clr-white);
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(26, 19, 16, 0.03);
+    box-shadow: 0 10px 35px rgba(26, 19, 16, 0.03);
     transition: transform var(--transition), box-shadow var(--transition);
 }
 
-/* Perfectly unified size blueprint */
+/* --- Perfectly Scaled Image Viewport --- */
 .block-media-viewport {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 11; /* Sharp editorial proportion rule */
+    aspect-ratio: 1 / 1.12; /* Optimized layout: displays long vertical braids clearly without taking too much screen space */
     overflow: hidden;
-    background-color: rgba(26, 19, 16, 0.02);
+    background-color: #0F0C0B; /* Deep contrast backdrop frames contained assets neatly */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .block-core-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Enforces 100% full view of the braids, zero cropping */
     display: block;
+    padding: 12px; /* Balanced border padding frames the hairstyle images beautifully */
     transition: transform 1.2s cubic-bezier(.16, 1, .3, 1);
 }
 
 .block-tint-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, transparent 60%, rgba(26, 19, 16, 0.1));
+    background: linear-gradient(to bottom, transparent 75%, rgba(15, 12, 11, 0.15));
+    pointer-events: none;
 }
 
 /* Tag & Labels Elements */
 .card-tag {
     position: absolute;
-    top: 25px;
-    left: 25px;
+    top: 20px;
+    left: 20px;
     background: var(--clr-white);
     color: var(--clr-dark);
-    padding: 8px 16px;
-    font-size: 0.65rem;
+    padding: 6px 12px;
+    font-size: 0.62rem;
     font-weight: 700;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.12em;
     z-index: 2;
     border-radius: 2px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 }
 
 .card-tag.gold-tag {
@@ -1337,23 +1344,24 @@ body {
 
 /* Content Blocks Details */
 .block-meta-envelope {
-    padding: 40px;
+    padding: 35px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    background: var(--clr-white);
 }
 
 .block-header-line {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 16px;
+    gap: 15px;
+    margin-bottom: 12px;
 }
 
 .block-display-title {
     font-family: var(--font-serif, serif);
-    font-size: 1.9rem;
+    font-size: 1.65rem;
     font-weight: 300;
     color: var(--clr-dark);
     letter-spacing: -0.01em;
@@ -1361,59 +1369,44 @@ body {
 }
 
 .block-price-badge {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: var(--clr-gold);
+    white-space: nowrap;
 }
 
 .block-short-description {
-    font-size: 0.98rem;
-    line-height: 1.7;
+    font-size: 0.94rem;
+    line-height: 1.65;
     color: var(--clr-muted);
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 
 /* Micro Footers */
 .block-card-footer {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
     margin-top: auto;
-    padding-top: 24px;
+    padding-top: 20px;
     border-top: 1px solid rgba(26, 19, 16, 0.06);
 }
 
 .meta-item {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     color: var(--clr-muted);
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .meta-item i {
     color: var(--clr-gold);
 }
 
-.minimal-action-link {
-    margin-left: auto;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--clr-dark);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: color 0.3s;
-}
-
-.minimal-action-link i {
-    transition: transform 0.3s;
-}
-
-/* --- Premium Structural Alternating Asymmetry (Desktop) --- */
+/* --- Premium Structural Alternating Asymmetry (Desktop Only) --- */
 .block-offset-portrait {
-    transform: translateY(60px);
+    transform: translateY(50px);
 }
 
 /* ==========================================================================
@@ -1421,23 +1414,15 @@ body {
    ========================================================================== */
 .block-structural-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 30px 60px rgba(26, 19, 16, 0.08);
+    box-shadow: 0 25px 50px rgba(26, 19, 16, 0.06);
 }
 
 .block-structural-card:hover .block-core-image {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .block-structural-card:hover .block-display-title {
     color: var(--clr-gold);
-}
-
-.minimal-action-link:hover {
-    color: var(--clr-gold);
-}
-
-.minimal-action-link:hover i {
-    transform: translateX(4px);
 }
 
 /* ==========================================================================
@@ -1448,7 +1433,8 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     border-top: 1px solid rgba(26, 19, 16, 0.08);
-    padding-top: 60px;
+    padding-top: 50px;
+    width: 100%;
 }
 
 .stat-node {
@@ -1468,15 +1454,15 @@ body {
 
 .stat-value {
     font-family: var(--font-serif, serif);
-    font-size: 3.2rem;
+    font-size: 2.8rem;
     font-weight: 300;
     color: var(--clr-gold);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     line-height: 1;
 }
 
 .stat-label {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--clr-muted);
@@ -1486,57 +1472,63 @@ body {
    UNIVERSAL DEVICE RESPONSIVE MECHANICS
    ========================================================================== */
 @media (max-width: 1200px) {
-    .showcase-fluid-container { padding: 0 40px; }
-    .showcase-main-heading { font-size: 3.5rem; }
-    .block-meta-envelope { padding: 30px; }
-    .block-display-title { font-size: 1.65rem; }
+    .showcase-fluid-container { padding: 0 32px; }
+    .showcase-main-heading { font-size: 3.2rem; }
+    .block-meta-envelope { padding: 25px; }
+    .block-display-title { font-size: 1.5rem; }
     .luxury-stats-track { margin-top: 100px; }
-    .stat-value { font-size: 2.6rem; }
+    .stat-value { font-size: 2.4rem; }
 }
 
 @media (max-width: 992px) {
     .showcase-marquee-row {
         grid-template-columns: 1fr;
         gap: 20px;
-        padding-bottom: 40px;
-        margin-bottom: 60px;
+        padding-bottom: 30px;
+        margin-bottom: 50px;
     }
     
     .showcase-asymmetric-matrix {
         grid-template-columns: 1fr;
         gap: 40px;
+        max-width: 580px; /* Controls single-column layouts beautifully on tablet viewports */
+        margin: 0 auto;
     }
 
     .block-offset-portrait {
-        transform: none; /* Normalize grid flow symmetry on mid-sized viewports */
-    }
-
-    .block-media-viewport {
-        aspect-ratio: 16 / 10;
+        transform: none; /* Disables offset layout alignment on tablet/mobile arrays */
     }
 
     .luxury-stats-track {
         grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-        row-gap: 50px;
-        padding-top: 50px;
+        gap: 30px;
+        row-gap: 40px;
+        padding-top: 40px;
     }
 
     .stat-node::after {
-        display: none; /* Strip inner vertical balance lines */
+        display: none;
     }
 }
 
 @media (max-width: 576px) {
-    .editorial-showcase-canvas { padding: 80px 0; }
+    .editorial-showcase-canvas { padding: 70px 0; }
     .showcase-fluid-container { padding: 0 20px; }
-    .showcase-main-heading { font-size: 2.5rem; }
-    .block-media-viewport { aspect-ratio: 1 / 1; } /* Crisp presentation layouts for micro viewports */
-    .block-meta-envelope { padding: 24px; }
+    .showcase-main-heading { font-size: 2.4rem; }
+    
+    .block-media-viewport { 
+        aspect-ratio: 1 / 1.15; /* Maintains perfect vertical balance on tiny mobile touchpoints */
+    } 
+    
+    .block-core-image {
+        padding: 8px; /* Tighter padding optimization for mobile spaces */
+    }
+
+    .block-meta-envelope { padding: 20px; }
     .block-header-line { flex-direction: column; align-items: flex-start; gap: 4px; }
-    .block-card-footer { gap: 16px; }
+    .block-card-footer { gap: 14px; }
     .meta-item { font-size: 0.82rem; }
-    .luxury-stats-track { grid-template-columns: 1fr; gap: 30px; margin-top: 70px; }
+    .luxury-stats-track { grid-template-columns: 1fr; gap: 25px; margin-top: 50px; }
 }
 
 
