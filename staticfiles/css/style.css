@@ -564,13 +564,13 @@ body {
    ========================================================================== */
 .premium-luxury-hero {
     position: relative;
-    padding: 100px 0 160px 0;
+    padding: 60px 0 100px 0;
     background-color: var(--clr-bg);
     overflow: hidden;
     width: 100%;
 }
 
-/* Subtle ambient backdrop lighting for premium depth depth illumination */
+/* Subtle ambient backdrop lighting for premium depth illumination */
 .hero-ambient-glow {
     position: absolute;
     top: -20%;
@@ -587,8 +587,8 @@ body {
     margin: 0 auto;
     padding: 0 50px;
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 100px;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
     align-items: center;
     position: relative;
     z-index: 2;
@@ -630,9 +630,9 @@ body {
 
 .hero-display-title {
     font-family: var(--font-serif);
-    font-size: 4.6rem;
+    font-size: 4.2rem;
     font-weight: 300;
-    line-height: 1.1;
+    line-height: 1.15;
     letter-spacing: -0.02em;
     color: var(--clr-dark);
     margin-bottom: 35px;
@@ -649,7 +649,7 @@ body {
     font-family: var(--font-sans);
     font-size: 1.05rem;
     line-height: 1.85;
-    color: #5D5450; /* Optimized high-contrast neutral body text tone */
+    color: #5D5450;
     max-width: 580px;
     margin-bottom: 50px;
 }
@@ -749,7 +749,7 @@ body {
     color: var(--clr-dark);
 }
 
-/* --- Right Column: Asymmetric Lookbook Architecture Canvas --- */
+/* --- Right Column: Asymmetric Self-Adapting Canvas --- */
 .hero-lookbook-canvas {
     position: relative;
     display: flex;
@@ -765,12 +765,23 @@ body {
     z-index: 3;
     box-shadow: 0 30px 70px rgba(11, 8, 7, 0.08);
     border: 1px solid rgba(11, 8, 7, 0.03);
+    background-color: #0B0807; /* Dark elegant matting behind non-cropped portrait portraits */
+}
+
+/* Inner containment stage prevents asset crop patterns */
+.lookbook-media-stage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .lookbook-img-core {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Enforces 100% full view of main image, no cropping */
     display: block;
     transition: transform 1.2s var(--ease-lux);
 }
@@ -782,7 +793,7 @@ body {
     pointer-events: none;
 }
 
-/* Floating Precision Detail Micro Fragment Card Layout */
+/* --- Floating Secondary Fragment Card (No-Crop Layout) --- */
 .lookbook-detail-fragment {
     position: absolute;
     bottom: -35px;
@@ -798,15 +809,17 @@ body {
 
 .fragment-media-box {
     width: 100%;
-    aspect-ratio: 1 / 1; /* Crisp uniform square image */
+    aspect-ratio: auto; /* Frees layout constraints to follow the image naturally */
+    max-height: 160px;
     overflow: hidden;
     margin-bottom: 12px;
+    background-color: var(--clr-bg);
 }
 
 .fragment-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Enforces absolute zero-cropping structure for second image */
     display: block;
 }
 
@@ -831,7 +844,7 @@ body {
     margin-top: 2px;
 }
 
-/* Minimalist geometric bounding frame element backdrop line */
+/* Minimalist geometric bounding framework line geometric backdrop */
 .lookbook-geometry-frame {
     position: absolute;
     top: 35px;
@@ -845,7 +858,7 @@ body {
 
 /* Interactive Lookbook Canvas Triggers */
 .hero-lookbook-canvas:hover .lookbook-img-core {
-    transform: scale(1.04);
+    transform: scale(1.03);
 }
 
 .hero-lookbook-canvas:hover .lookbook-detail-fragment {
@@ -857,17 +870,21 @@ body {
    ========================================================================== */
 @media (max-width: 1200px) {
     .hero-layout-matrix {
-        grid-template-columns: 1fr; /* Switch to stack structure smoothly */
-        gap: 80px;
+        grid-template-columns: 1fr;
+        gap: 60px;
         padding: 0 40px;
     }
     
     .hero-text-engine {
-        order: 2; /* Content moves logically under the image row */
+        order: 2;
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    
+    .hero-display-title {
+        font-size: 3.8rem;
     }
     
     .hero-display-paragraph { max-width: 650px; }
@@ -875,38 +892,39 @@ body {
 
     .hero-lookbook-canvas {
         order: 1;
-        max-width: 600px;
+        max-width: 500px; /* Limits landscape stretching on tablet displays */
         margin: 0 auto;
         justify-content: center;
     }
     
     .lookbook-main-frame {
-        width: 100%; /* Spans grid boundary completely without cropping sides */
+        width: 100%;
+        aspect-ratio: 4 / 5; /* Retains pristine elegant fashion ratio */
     }
     
     .lookbook-geometry-frame {
         width: 100%;
-        left: -20px;
-        top: -20px;
+        left: -15px;
+        top: -15px;
     }
     
     .lookbook-detail-fragment {
-        left: 20px;
+        left: 15px;
     }
 }
 
 @media (max-width: 768px) {
     .premium-luxury-hero {
-        padding: 50px 0 100px 0;
+        padding: 60px 0 100px 0;
     }
     
     .hero-layout-matrix {
         padding: 0 24px;
-        gap: 60px;
+        gap: 50px;
     }
     
     .hero-display-title {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
         margin-bottom: 25px;
     }
     
@@ -915,11 +933,11 @@ body {
         margin-bottom: 40px;
     }
     
-    /* Responsive action keys stack beautifully on small handheld devices */
+    /* Responsive action buttons stack seamlessly on mobile handheld layout views */
     .hero-interactive-actions {
         flex-direction: column;
         width: 100%;
-        gap: 20px;
+        gap: 16px;
         margin-bottom: 50px;
     }
     
@@ -935,17 +953,17 @@ body {
         padding: 12px 0;
     }
     
-    .btn-luxury-underline::after { display: none; } /* Clear underline decoration line on small screens */
+    .btn-luxury-underline::after { display: none; }
 
     .hero-lookbook-canvas {
         max-width: 100%;
     }
     
     .lookbook-main-frame {
-        aspect-ratio: 1 / 1; /* Transitions to tight square layouts to maximize viewport height */
+        aspect-ratio: 4 / 5; /* Keeps natural vertical scale proportions crisp on mobile screens */
     }
     
-    /* Hide secondary detailed decorative modules on mobile screens to prevent visual clutter */
+    /* Disables layered background accents to maximize clean spacing footprint on mobile */
     .lookbook-detail-fragment, .lookbook-geometry-frame {
         display: none !important;
     }
